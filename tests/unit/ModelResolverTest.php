@@ -10,7 +10,6 @@ use Phpolar\Model\Tests\Stubs\ModelStub;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\TestDox;
 use PHPUnit\Framework\TestCase;
-use ReflectionMethod;
 use RuntimeException;
 
 #[CoversClass(ModelResolver::class)]
