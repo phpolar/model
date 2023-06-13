@@ -10,7 +10,7 @@ class ColumnTestData
     {
         return [
             [uniqid()],
-            [uniqid()]
+            [uniqid()],
         ];
     }
 }
