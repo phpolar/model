@@ -1,3 +1,9 @@
+## 1.1.1 (2023-07-03)
+
+### Refactor
+
+- use renamed core library
+
 ## 1.1.0 (2023-06-12)
 
 ### Feat
