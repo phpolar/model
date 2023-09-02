@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Phpolar\Model\Tests\Stubs;
 
 use Attribute;
-use Phpolar\Validator\MessageGetterInterface;
-use Phpolar\Validator\ValidatorInterface;
+use PhpContrib\Validator\MessageGetterInterface;
+use PhpContrib\Validator\ValidatorInterface;
 
 #[Attribute(Attribute::TARGET_PROPERTY)]
 final class InvalidPropertyStub implements ValidatorInterface, MessageGetterInterface
@@ -18,8 +18,8 @@ final class InvalidPropertyStub implements ValidatorInterface, MessageGetterInte
         return false;
     }
 
-    public function getMessages(): array
+    public function getMessage(): string
     {
-        return [self::EXPECTED_MESSAGE];
+        return self::EXPECTED_MESSAGE;
     }
 }

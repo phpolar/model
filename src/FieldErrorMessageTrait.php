@@ -4,11 +4,10 @@ declare(strict_types=1);
 
 namespace Phpolar\Model;
 
-use Phpolar\Validator\MessageGetterInterface;
+use PhpContrib\Validator\MessageGetterInterface;
 use ReflectionAttribute;
 use ReflectionObject;
 use ReflectionProperty;
-use Stringable;
 
 /**
  * Provides support for displaying form field error messages.
@@ -104,7 +103,7 @@ trait FieldErrorMessageTrait
                 );
                 array_walk(
                     $errorMessages,
-                    function (string | Stringable $err) use ($prop): void {
+                    function (string $err) use ($prop): void {
                         $this->errorMessages[$prop->getName()] = (string) $err;
                     }
                 );
@@ -122,17 +121,16 @@ trait FieldErrorMessageTrait
     private function getMessageGetters(ReflectionProperty $prop): array
     {
         return array_map(
-            function (ReflectionAttribute $attr) use ($prop): MessageGetterInterface {
-                $instance = $attr->newInstance();
-                if (method_exists($instance, "withRequiredPropVal") === true) {
-                    return $instance->withRequiredPropVal($prop, $this);
-                }
+            function (MessageGetterInterface $instance) use ($prop): MessageGetterInterface {
                 if (property_exists($instance, "propVal") === true) {
                     $instance->propVal = $prop->isInitialized($this) === true ? $prop->getValue($this) : $prop->getDefaultValue();
                 }
                 return $instance;
             },
-            $prop->getAttributes(MessageGetterInterface::class, ReflectionAttribute::IS_INSTANCEOF),
+            array_map(
+                static fn (ReflectionAttribute $attr) => $attr->newInstance(),
+                $prop->getAttributes(MessageGetterInterface::class, ReflectionAttribute::IS_INSTANCEOF),
+            ),
         );
     }
 
@@ -142,13 +140,13 @@ trait FieldErrorMessageTrait
      * Returns errors from invalid validators.
      *
      * @param MessageGetterInterface[] $attrs
-     * @return (string|Stringable)[]
+     * @return string[]
      */
     private static function getErrorsFromAttributes(array $attrs): array
     {
-        return array_merge(
-            ...array_map(
-                static fn (MessageGetterInterface $attr) => $attr->getMessages(),
+        return array_filter(
+            array_map(
+                static fn (MessageGetterInterface $attr) => (string) $attr->getMessage(),
                 $attrs
             )
         );

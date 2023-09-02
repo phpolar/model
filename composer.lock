@@ -4,8 +4,48 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b32a02d25fd169dde5b88c1af6248e1f",
+    "content-hash": "e9c667f986bfa576cd971d961f8e1aa5",
     "packages": [
+        {
+            "name": "php-contrib/validator",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-contrib/validator.git",
+                "reference": "48899135fc93ad19fca120a85f836f09e6786b59"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-contrib/validator/zipball/48899135fc93ad19fca120a85f836f09e6786b59",
+                "reference": "48899135fc93ad19fca120a85f836f09e6786b59",
+                "shasum": ""
+            },
+            "suggest": {
+                "phpolar/validators": "A set of nifty validators"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PhpContrib\\Validator\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Eric Fortmeyer",
+                    "email": "e.fortmeyer01@gmail.com"
+                }
+            ],
+            "description": " Supports validation of property values ",
+            "support": {
+                "issues": "https://github.com/php-contrib/validator/issues",
+                "source": "https://github.com/php-contrib/validator/tree/1.0.0"
+            },
+            "time": "2023-09-02T16:00:07+00:00"
+        },
         {
             "name": "phpolar/core",
             "version": "3.0.0",
@@ -150,46 +190,6 @@
                 "source": "https://github.com/phpolar/storage-driver/tree/1.0.0"
             },
             "time": "2023-02-06T04:46:21+00:00"
-        },
-        {
-            "name": "phpolar/validator",
-            "version": "1.0.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/phpolar/validator.git",
-                "reference": "c428593704727629e6a0b6aeba0770a0bebeeea9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/phpolar/validator/zipball/c428593704727629e6a0b6aeba0770a0bebeeea9",
-                "reference": "c428593704727629e6a0b6aeba0770a0bebeeea9",
-                "shasum": ""
-            },
-            "suggest": {
-                "phpolar/validators": "A set of nifty validators"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Phpolar\\Validator\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Eric Fortmeyer",
-                    "email": "e.fortmeyer01@gmail.com"
-                }
-            ],
-            "description": "Unifies validator implementations",
-            "support": {
-                "issues": "https://github.com/phpolar/validator/issues",
-                "source": "https://github.com/phpolar/validator/tree/1.0.5"
-            },
-            "time": "2023-06-13T13:50:37+00:00"
         },
         {
             "name": "psr/http-message",
