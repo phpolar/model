@@ -1,3 +1,16 @@
+## 1.2.0 (2023-09-02)
+
+### Feat
+
+- use validator interfaces from php contrib
+- add model resolver
+- initial commit
+
+### Refactor
+
+- use renamed core library
+- remove unused test helpers
+
 ## 1.1.1 (2023-07-03)
 
 ### Refactor
