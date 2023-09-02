@@ -354,9 +354,9 @@ return [
     'directory_list' => [
         'src',
         'vendor/psr',
-        'vendor/phpolar/phpolar-core/src',
+        'vendor/phpolar/core/src',
         'vendor/phpolar/storage-driver/src',
-        'vendor/phpolar/validator/src',
+        'vendor/php-contrib/validator/src',
     ],
 
     // A list of individual files to include in analysis

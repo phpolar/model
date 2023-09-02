@@ -27,12 +27,10 @@ trait DataTypeDetectionTrait
     ): Stringable|DataTypeUnknown {
         $property = new ReflectionProperty($this, $propName);
         $propertyType = $property->getType();
-        return match ($propertyType instanceof ReflectionNamedType) {
-            true =>
-                $this->getDataTypeFromDeclaredProperty($propertyType, $storageDriver),
-            default =>
-                $this->getDataTypeFromNotDeclaredProperty($property, $storageDriver),
-        };
+        if ($propertyType instanceof ReflectionNamedType) {
+            return $this->getDataTypeFromDeclaredProperty($propertyType, $storageDriver);
+        }
+        return $this->getDataTypeFromNotDeclaredProperty($property, $storageDriver);
     }
 
     private function getDataTypeFromDeclaredProperty(
@@ -51,16 +49,22 @@ trait DataTypeDetectionTrait
         ReflectionProperty $property,
         StorageDriverInterface $storageDriver,
     ): Stringable|DataTypeUnknown {
-        return match ($property->isInitialized($this)) {
-            true => match (is_object($value = $property->getValue($this))) {
-                true => match (get_class($value)) {
-                    "DateTimeImmutable", "DateTime" =>
-                        $storageDriver->getDataType(TypeName::T_DateTime),
-                    default => new DataTypeUnknown(),
-                },
-                default => $storageDriver->getDataType(parseTypeName(gettype($value))),
-            },
-            default => new DataTypeUnknown(),
-        };
+        if ($property->isInitialized($this) === true) {
+            $value = $property->getValue($this);
+
+            if (is_object($value) === false) {
+                return $storageDriver->getDataType(parseTypeName(gettype($value)));
+            }
+
+            if ($this->isInstanceOfDateTime($value) === true) {
+                return $storageDriver->getDataType(TypeName::T_DateTime);
+            }
+        }
+        return new DataTypeUnknown();
+    }
+
+    private function isInstanceOfDateTime(object $value): bool
+    {
+        return in_array(get_class($value), ["DateTimeImmutable", "DateTime"]);
     }
 }
