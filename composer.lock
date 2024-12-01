@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cef76378c7ff9634d509850df208964c",
+    "content-hash": "449bd03ee7d2970ab3cc6dd73977bb99",
     "packages": [
         {
             "name": "php-contrib/validator",
@@ -48,16 +48,16 @@
         },
         {
             "name": "phpolar/core",
-            "version": "3.0.0",
+            "version": "4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpolar/core.git",
-                "reference": "de4dc9f73c4d6c2c966cd0ee8a7ca52b49e6d889"
+                "reference": "3b17c8b3b4545a4b18165be163977a2bd95eb2a1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpolar/core/zipball/de4dc9f73c4d6c2c966cd0ee8a7ca52b49e6d889",
-                "reference": "de4dc9f73c4d6c2c966cd0ee8a7ca52b49e6d889",
+                "url": "https://api.github.com/repos/phpolar/core/zipball/3b17c8b3b4545a4b18165be163977a2bd95eb2a1",
+                "reference": "3b17c8b3b4545a4b18165be163977a2bd95eb2a1",
                 "shasum": ""
             },
             "require": {
@@ -75,7 +75,7 @@
                 "phpmd/phpmd": "^2.13",
                 "phpolar/http-message-test-utils": "^0.1.0 || ^0.2.0",
                 "phpstan/phpstan": "^1.9.14",
-                "phpunit/phpunit": "^10.0",
+                "phpunit/phpunit": "^11.4",
                 "squizlabs/php_codesniffer": "^3.7.1"
             },
             "type": "library",
@@ -100,9 +100,9 @@
             "description": "The internal components of the PHPolar Microframework",
             "support": {
                 "issues": "https://github.com/phpolar/core/issues",
-                "source": "https://github.com/phpolar/core/tree/3.0.0"
+                "source": "https://github.com/phpolar/core/tree/4.0.0"
             },
-            "time": "2023-07-04T00:46:34+00:00"
+            "time": "2024-12-01T21:27:03+00:00"
         },
         {
             "name": "phpolar/model-resolver",
