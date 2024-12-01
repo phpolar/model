@@ -1,30 +1,25 @@
-<p align="center">
-    <img width="240" src="./phpolar.svg" />
+<p style="text-align: center">
+    <img width="240" src="./phpolar.svg" alt="phpolar logo" />
 </p>
 
 # PHPolar Model
 
 ## Provides support for configuring the properties of an object for validation, formatting, and storage.
 
-[![Coverage Status](https://coveralls.io/repos/github/phpolar/model/badge.svg?branch=main)](https://coveralls.io/repos/github/phpolar/model/badge.svg?branch=main) [![Latest Stable Version](http://poser.pugx.org/phpolar/model/v)][def] [![Total Downloads](http://poser.pugx.org/phpolar/model/downloads)][def] [![Latest Unstable Version](http://poser.pugx.org/phpolar/model/v/unstable)][def] [![License](http://poser.pugx.org/phpolar/model/license)][def] [![PHP Version Require](http://poser.pugx.org/phpolar/model/require/php)][def]
+[![Coverage Status](https://coveralls.io/repos/github/phpolar/model/badge.svg?branch=main)](https://coveralls.io/repos/github/phpolar/model/badge.svg?branch=main) [![Latest Stable Version](http://poser.pugx.org/phpolar/model/v)](https://packagist.org/packages/phpolar/model) [![Total Downloads](http://poser.pugx.org/phpolar/model/downloads)](https://packagist.org/packages/phpolar/model) [![Latest Unstable Version](http://poser.pugx.org/phpolar/model/v/unstable)](https://packagist.org/packages/phpolar/model) [![License](http://poser.pugx.org/phpolar/model/license)](https://packagist.org/packages/phpolar/model) [![PHP Version Require](http://poser.pugx.org/phpolar/model/require/php)](https://packagist.org/packages/phpolar/model)
 
 ### Example 1
 
 ```php
 <!DOCTYPE html>
 <?php
-
 namespace MyApp;
 
 use Phpolar\Phpolar\FormControlTypes;
 
-/**
- * @var PersonForm
- */
-$view = $this;
+(function (PersonForm $view) {
 ?>
 <html>
-    // ...
     <body style="text-align:center">
         <h1><?= $view->title ?></h1>
         <div class="container">
@@ -46,6 +41,8 @@ $view = $this;
         </div>
     </body>
 </html>
+<?php
+})($this);
 ```
 
 ### Use Attributes to Configure Models
