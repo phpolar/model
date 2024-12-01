@@ -1,3 +1,9 @@
+## 1.2.1 (2024-12-01)
+
+### Fix
+
+- **composer**: upgrade dependencies
+
 ## 1.2.0 (2023-09-02)
 
 ### Feat
