@@ -1,3 +1,9 @@
+## 1.2.2 (2024-12-01)
+
+### Fix
+
+- **composer**: upgrade to phpolar/core 4.0.0
+
 ## 1.2.1 (2024-12-01)
 
 ### Fix
