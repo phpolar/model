@@ -1,4 +1,4 @@
-<p style="text-align: center">
+<p align="center">
     <img width="240" src="./phpolar.svg" alt="phpolar logo" />
 </p>
 
@@ -6,7 +6,7 @@
 
 ## Provides support for configuring the properties of an object for validation, formatting, and storage.
 
-[![Coverage Status](https://coveralls.io/repos/github/phpolar/model/badge.svg?branch=main)](https://coveralls.io/repos/github/phpolar/model/badge.svg?branch=main) [![Latest Stable Version](http://poser.pugx.org/phpolar/model/v)](https://packagist.org/packages/phpolar/model) [![Total Downloads](http://poser.pugx.org/phpolar/model/downloads)](https://packagist.org/packages/phpolar/model) [![Latest Unstable Version](http://poser.pugx.org/phpolar/model/v/unstable)](https://packagist.org/packages/phpolar/model) [![License](http://poser.pugx.org/phpolar/model/license)](https://packagist.org/packages/phpolar/model) [![PHP Version Require](http://poser.pugx.org/phpolar/model/require/php)](https://packagist.org/packages/phpolar/model)
+[![Coverage Status](https://coveralls.io/repos/github/phpolar/model/badge.svg?branch=main)](https://coveralls.io/repos/github/phpolar/model/badge.svg?branch=main) [![Latest Stable Version](https://poser.pugx.org/phpolar/model/v)](https://packagist.org/packages/phpolar/model) [![Total Downloads](https://poser.pugx.org/phpolar/model/downloads)](https://packagist.org/packages/phpolar/model) [![PHP Version Require](https://poser.pugx.org/phpolar/model/require/php)](https://packagist.org/packages/phpolar/model)
 
 ### Example 1
 
