@@ -1,3 +1,9 @@
+## 1.2.4 (2025-01-20)
+
+### Fix
+
+- **composer**: update php-contrib/validator to 2.0
+
 ## 1.2.3 (2024-12-01)
 
 ### Fix
