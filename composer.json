@@ -27,7 +27,7 @@
     },
     "require": {
         "php": ">=8.1",
-        "php-contrib/validator": "^1.0",
+        "php-contrib/validator": "^2.0",
         "phpolar/core": "^4.0.0",
         "phpolar/model-resolver": "^1.0",
         "phpolar/storage-driver": "^1.0"
