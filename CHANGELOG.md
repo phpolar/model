@@ -1,3 +1,9 @@
+## 1.2.5 (2025-02-13)
+
+### Fix
+
+- ignore phpdoc folder from dist
+
 ## 1.2.4 (2025-01-20)
 
 ### Fix
