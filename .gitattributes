@@ -11,6 +11,7 @@
 /.phan                      export-ignore
 /phpcs.xml                  export-ignore
 /phpdoc.xml                 export-ignore
+/.phpdoc                    export-ignore
 /phpunit.xml                export-ignore
 /phpunit.acceptance.xml     export-ignore
 /phpunit.ci.xml             export-ignore
