@@ -1,3 +1,9 @@
+## 1.3.0 (2025-03-20)
+
+### Feat
+
+- **composer**: require php 8.3 or greater
+
 ## 1.2.5 (2025-02-13)
 
 ### Fix
