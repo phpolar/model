@@ -4,11 +4,13 @@ declare(strict_types=1);
 
 namespace Phpolar\Model;
 
+
 use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\CoversTrait;
 use PHPUnit\Framework\Attributes\TestDox;
 use PHPUnit\Framework\TestCase;
 
-#[CoversClass(PrimaryKeyTrait::class)]
+#[CoversTrait(PrimaryKeyTrait::class)]
 #[CoversClass(PrimaryKey::class)]
 final class PrimaryKeyTraitTest extends TestCase
 {

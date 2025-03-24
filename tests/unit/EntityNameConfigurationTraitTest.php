@@ -6,7 +6,7 @@ namespace Phpolar\Model;
 
 use Phpolar\Model\Tests\Stubs\EntityNameConfigured;
 use Phpolar\Model\Tests\Stubs\EntityNameNotConfigured;
-use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\CoversTrait;
 use PHPUnit\Framework\Attributes\TestDox;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
@@ -14,7 +14,7 @@ use ReflectionClass;
 use const Phpolar\Model\Tests\ENTITY_NAME_TEST_CASE;
 
 #[CoversClass(EntityName::class)]
-#[CoversClass(EntityNameConfigurationTrait::class)]
+#[CoversTrait(EntityNameConfigurationTrait::class)]
 final class EntityNameConfigurationTraitTest extends TestCase
 {
     #[TestDox("Shall return the configured entity name")]

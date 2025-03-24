@@ -8,11 +8,11 @@ use Closure;
 use DateTime;
 use DateTimeImmutable;
 use DateTimeInterface;
-use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\CoversTrait;
 use PHPUnit\Framework\Attributes\TestDox;
 use PHPUnit\Framework\TestCase;
 
-#[CoversClass(FormControlTypeDetectionTrait::class)]
+#[CoversTrait(FormControlTypeDetectionTrait::class)]
 final class FormControlTypeDetectionTraitTest extends TestCase
 {
     #[TestDox("Shall detect form control types")]
