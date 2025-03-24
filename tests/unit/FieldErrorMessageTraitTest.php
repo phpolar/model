@@ -6,11 +6,11 @@ namespace Phpolar\Model;
 
 use Phpolar\Model\Tests\Stubs\InvalidPropertyStub;
 use Phpolar\Model\Tests\Stubs\ValidPropertyStub;
-use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\CoversTrait;
 use PHPUnit\Framework\Attributes\TestDox;
 use PHPUnit\Framework\TestCase;
 
-#[CoversClass(FieldErrorMessageTrait::class)]
+#[CoversTrait(FieldErrorMessageTrait::class)]
 final class FieldErrorMessageTraitTest extends TestCase
 {
     #[TestDox("Shall produce expected error message when property validation fails")]

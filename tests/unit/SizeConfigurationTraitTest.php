@@ -6,11 +6,12 @@ namespace Phpolar\Model;
 
 use Phpolar\Phpolar\Core\SizeNotConfigured;
 use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\CoversTrait;
 use PHPUnit\Framework\Attributes\TestDox;
 use PHPUnit\Framework\TestCase;
 
 #[CoversClass(Size::class)]
-#[CoversClass(SizeConfigurationTrait::class)]
+#[CoversTrait(SizeConfigurationTrait::class)]
 final class SizeConfigurationTraitTest extends TestCase
 {
     #[TestDox("Shall return the given argument as size")]

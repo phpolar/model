@@ -10,11 +10,11 @@ use Stringable;
 use Phpolar\StorageDriver\DataTypeUnknown;
 use Phpolar\StorageDriver\StorageDriverInterface;
 use Phpolar\StorageDriver\TypeName;
-use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\CoversTrait;
 use PHPUnit\Framework\Attributes\TestDox;
 use PHPUnit\Framework\TestCase;
 
-#[CoversClass(DataTypeDetectionTrait::class)]
+#[CoversTrait(DataTypeDetectionTrait::class)]
 final class DataTypeTraitTest extends TestCase
 {
     #[TestDox("Shall generate column parameter string from declared property type")]

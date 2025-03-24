@@ -6,12 +6,13 @@ namespace Phpolar\Model;
 
 use Phpolar\Phpolar\Core\Exception\InvalidInputTypeCastToStringException;
 use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\CoversTrait;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\TestDox;
 use PHPUnit\Framework\TestCase;
 
 #[CoversClass(InputTypes::class)]
-#[CoversClass(InvalidInputTypeCastToStringException::class)]
+#[CoversTrait(InvalidInputTypeCastToStringException::class)]
 final class InputTypesTest extends TestCase
 {
     public static function dataProvider(): array
