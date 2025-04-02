@@ -2,7 +2,7 @@ name: Prod Upgrade Release
 
 on:
   schedule:
-    - cron: '57 1 * * 2'
+    - cron: '5 2 * * 3'
 
 jobs:
   prod_upgrade_release:
