@@ -33,12 +33,11 @@ jobs:
         run: |
           {
             echo 'has_new_prod_upgrade<<EOF'
-            [ -z "$(git log HEAD "$latest_tag" --author "$DEP_UPGRADE_AUTHOR" --grep "$DEP_UPGRADE_TYPE")" ] && echo 1 || echo 0
+            [ -z "$(git log HEAD "$latest_tag" --author "$DEP_UPGRADE_AUTHOR" --grep "$DEP_UPGRADE_TYPE")" ] && echo 'true' || echo 'false'
             echo EOF
           } >> "$GITHUB_OUTPUT"
-      - run: echo ${{ steps.has-new-prod-upgrade.outputs.has_new_prod_upgrade }}
       - name: Create release when prod dependency upgraded
-        if: steps.has-new-prod-upgrade.outputs.has_new_prod_upgrade
+        if: steps.has-new-prod-upgrade.outputs.has_new_prod_upgrade != 'true'
         run: |
           git tag -a "$NEW_TAG" -m "$NEW_TAG"
           git push --tags
