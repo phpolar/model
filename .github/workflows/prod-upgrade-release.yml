@@ -10,17 +10,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - run: env
       - run: git fetch --all --unshallow
       - name: Set latest tag
         run: echo "latest_tag=$(git describe --tags --abbrev=0)" >> "$GITHUB_ENV"
       - name: Set new tag
         id: set-new-tag
-        run: |
-          {
-            echo 'new_tag<<EOF'
-            echo "$latest_tag" | awk 'BEGIN { FS = "." } { print $1"."$2"."$3+1 }'
-            echo EOF
-          } >> "$GITHUB_OUTPUT"
+        run: echo "NEW_TAG=$(echo $latest_tag | awk 'BEGIN { FS = "." } { print $1"."$2"."$3+1 }')" >> "$GITHUB_ENV"
       - name: Set "has_new_prod_upgrade"
         id: has-new-prod-upgrade
         run: |
@@ -31,8 +27,6 @@ jobs:
           } >> "$GITHUB_OUTPUT"
       - name: Create release when prod deps upgraded
         if: ${{ steps.has-new-prod-upgrade.outputs.has_new_prod_upgrade != '' }}
-        env:
-          NEW_TAG: ${{ steps.set-new-tag.outputs.new_tag }}
         run: |
           git tag -a "$NEW_TAG" -m "$NEW_TAG"
           git push --tags
