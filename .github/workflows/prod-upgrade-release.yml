@@ -2,7 +2,7 @@ name: Prod Upgrade Release
 
 on:
   schedule:
-    - cron: '45 1 * * 3'
+    - cron: '50 1 * * 4'
 
 jobs:
   prod_upgrade_release:
@@ -15,13 +15,25 @@ jobs:
       - run: /usr/gin/git fetch --tags
       - name: Set latest tag
         run: |
-          echo "latest_tag=$(/usr/bin/git describe --tags --abbrev=0)" >> "$GITHUB_ENV"
+          {
+            echo 'latest_tag<<EOF'
+            /usr/bin/git describe --tags --abbrev=0
+            EOF
+          }  >> "$GITHUB_ENV"
       - name: Set new tag
         run: |
-          echo "new_tag=$(echo $latest_tag | awk 'BEGIN { FS = "." } { print $1"."$2"."$3+1 }')" >> "$GITHUB_ENV"
+          {
+            echo 'new_tag<<EOF'
+            echo $latest_tag | awk 'BEGIN { FS = "." } { print $1"."$2"."$3+1 }'
+            EOF
+          } >> "$GITHUB_ENV"
       - name: Set "has_new_prod_upgrade"
         run: |
-          echo "has_new_prod_upgrade=$(/usr/bin/git log HEAD $latest_tag --author $DEP_UPGRADE_AUTHOR --grep $DEP_UPGRADE_TYPE)" >> "$GITHUB_ENV"
+          {
+            echo 'has_new_prod_upgrade<<EOF'
+            /usr/bin/git log HEAD "$latest_tag --author "$DEP_UPGRADE_AUTHOR" --grep "$DEP_UPGRADE_TYPE"
+            EOF
+          } >> "$GITHUB_ENV"
       - name: Create release when prod deps upgraded
         run: |
           if [ -n "$has_new_prod_upgrade" ]; then
