@@ -41,6 +41,3 @@ jobs:
 
     - name: Run test suite
       run: composer ci:test-build
-
-    - name: Show env
-      run: env
