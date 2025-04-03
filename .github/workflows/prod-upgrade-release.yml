@@ -30,7 +30,7 @@ jobs:
         run: |
           {
             echo 'has_new_prod_upgrade<<EOF'
-            git log HEAD "$latest_tag" --author "$DEP_UPGRADE_AUTHOR" --grep "$DEP_UPGRADE_TYPE" | tr -d '[[:space:]]'
+            git log HEAD "$latest_tag" --author "$DEP_UPGRADE_AUTHOR" --grep "$DEP_UPGRADE_TYPE" | tr -d "[[:space:]]"
             echo EOF
           } >> "$GITHUB_OUTPUT"
       - name: Create release when prod dependency upgraded
