@@ -12,12 +12,7 @@ jobs:
       - uses: actions/checkout@v4
       - run: git fetch --all
       - name: Set latest tag
-        run: |
-          {
-            echo 'latest_tag<<EOF'
-            git describe --tags --abbrev=0
-            echo EOF
-          }  >> "$GITHUB_ENV"
+        run: echo "latest_tag=$(git describe --tags --abbrev=0)" >> "$GITHUB_ENV"
       - name: Set new tag
         id: set-new-tag
         run: |
