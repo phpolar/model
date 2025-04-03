@@ -10,8 +10,7 @@ jobs:
     env:
       DEP_UPGRADE_AUTHOR: dependabot
       DEP_UPGRADE_TYPE: direct:production
-      USER_EMAIL: e.fortmeyer01@gmail.com
-      USER_SIGNING_KEY: CED4C1117EA29C94
+      USER_EMAIL: no-reply@phpolar.org
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -19,8 +18,6 @@ jobs:
         run: git config --global user.email "$USER_EMAIL"
       - name: Setup user namei
         run: git config --global user.name "$GITHUB_ACTOR"
-      - name: Setup signing key
-        run: git config --global user.signingkey "$USER_SIGNING_KEY"
       - name: Convert to unshallow fetch
         run: git fetch --all --unshallow
       - name: Set latest tag
@@ -37,7 +34,7 @@ jobs:
             echo EOF
           } >> "$GITHUB_OUTPUT"
       - name: Create release when prod dependency upgraded
-        if: steps.has-new-prod-upgrade.outputs.has_new_prod_upgrade != 'true'
+        if: ${{ steps.has-new-prod-upgrade.outputs.has_new_prod_upgrade != 'true' }}
         run: |
           git tag -a "$NEW_TAG" -m "$NEW_TAG"
           git push --tags
