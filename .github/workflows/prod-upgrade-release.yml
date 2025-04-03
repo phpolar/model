@@ -2,7 +2,7 @@ name: Prod Upgrade Release
 
 on:
   schedule:
-    - cron: '50 1 * * 4'
+    - cron: '2 2 * * 4'
 
 jobs:
   prod_upgrade_release:
@@ -24,14 +24,14 @@ jobs:
         run: |
           {
             echo 'new_tag<<EOF'
-            echo $latest_tag | awk 'BEGIN { FS = "." } { print $1"."$2"."$3+1 }'
+            echo "$latest_tag" | awk 'BEGIN { FS = "." } { print $1"."$2"."$3+1 }'
             EOF
           } >> "$GITHUB_ENV"
       - name: Set "has_new_prod_upgrade"
         run: |
           {
             echo 'has_new_prod_upgrade<<EOF'
-            /usr/bin/git log HEAD "$latest_tag --author "$DEP_UPGRADE_AUTHOR" --grep "$DEP_UPGRADE_TYPE"
+            /usr/bin/git log HEAD "$latest_tag" --author "$DEP_UPGRADE_AUTHOR" --grep "$DEP_UPGRADE_TYPE"
             EOF
           } >> "$GITHUB_ENV"
       - name: Create release when prod deps upgraded
