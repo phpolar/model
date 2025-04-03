@@ -1,8 +1,6 @@
 name: Prod Upgrade Release
 
-on:
-  schedule:
-    - cron: '6 2 * * 4'
+on: push
 
 jobs:
   prod_upgrade_release:
@@ -21,23 +19,26 @@ jobs:
             EOF
           }  >> "$GITHUB_ENV"
       - name: Set new tag
+        id: set-new-tag
         run: |
           {
             echo 'new_tag<<EOF'
             echo "$latest_tag" | awk 'BEGIN { FS = "." } { print $1"."$2"."$3+1 }'
             EOF
-          } >> "$GITHUB_ENV"
+          } >> "$GITHUB_OUTPUT"
       - name: Set "has_new_prod_upgrade"
+        id: has-new-prod-upgrade
         run: |
           {
             echo 'has_new_prod_upgrade<<EOF'
             git log HEAD "$latest_tag" --author "$DEP_UPGRADE_AUTHOR" --grep "$DEP_UPGRADE_TYPE"
             EOF
-          } >> "$GITHUB_ENV"
+          } >> "$GITHUB_OUTPUT"
       - name: Create release when prod deps upgraded
+        if: ${{ steps.has-new-prod-upgrade.outputs.has_new_prod_upgrade != '' }}
+        env:
+          NEW_TAG: ${{ steps.set-new-tag.outputs.new_tag }}
         run: |
-          if [ -n "$has_new_prod_upgrade" ]; then
-              git tag -a "$new_tag" -m "$new_tag"
-              git push --tags
-              gh release create "$new_tag" --generate-notes --title "Dependency upgrade release"
-          fi
+          git tag -a "$NEW_TAG" -m "$NEW_TAG"
+          git push --tags
+          gh release create "$NEW_TAG" --generate-notes --title "Dependency upgrade release"
