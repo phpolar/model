@@ -2,7 +2,7 @@ name: Prod Upgrade Release
 
 on:
   schedule:
-    - cron: '2 2 * * 3'
+    - cron: '6 2 * * 4'
 
 jobs:
   prod_upgrade_release:
@@ -12,12 +12,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: /usr/gin/git fetch --tags
+      - run: git fetch --tags
       - name: Set latest tag
         run: |
           {
             echo 'latest_tag<<EOF'
-            /usr/bin/git describe --tags --abbrev=0
+            git describe --tags --abbrev=0
             EOF
           }  >> "$GITHUB_ENV"
       - name: Set new tag
@@ -31,13 +31,13 @@ jobs:
         run: |
           {
             echo 'has_new_prod_upgrade<<EOF'
-            /usr/bin/git log HEAD "$latest_tag" --author "$DEP_UPGRADE_AUTHOR" --grep "$DEP_UPGRADE_TYPE"
+            git log HEAD "$latest_tag" --author "$DEP_UPGRADE_AUTHOR" --grep "$DEP_UPGRADE_TYPE"
             EOF
           } >> "$GITHUB_ENV"
       - name: Create release when prod deps upgraded
         run: |
           if [ -n "$has_new_prod_upgrade" ]; then
-              /usr/bin/git tag -a "$new_tag" -m "$new_tag"
-              /usr/bin/git push --tags
+              git tag -a "$new_tag" -m "$new_tag"
+              git push --tags
               gh release create "$new_tag" --generate-notes --title "Dependency upgrade release"
           fi
