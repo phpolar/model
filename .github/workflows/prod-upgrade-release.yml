@@ -25,7 +25,7 @@ jobs:
       - name: Create release when prod deps upgraded
         run: |
           if [ -n "$has_new_prod_upgrade" ]; then
-              /usr/bin/git tag -a "$NEW_TAG" -m "$NEW_TAG"
+              /usr/bin/git tag -a "$new_tag" -m "$new_tag"
               /usr/bin/git push --tags
-              gh release create "$NEW_TAG" --generate-notes --title "Dependency upgrade release"
+              gh release create "$new_tag" --generate-notes --title "Dependency upgrade release"
           fi
