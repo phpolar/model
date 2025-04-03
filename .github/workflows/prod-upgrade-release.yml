@@ -2,6 +2,9 @@ name: Prod Upgrade Release
 
 on: push
 
+permissions:
+  content: write
+
 jobs:
   prod_upgrade_release:
     env:
