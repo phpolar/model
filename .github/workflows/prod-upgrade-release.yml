@@ -34,7 +34,7 @@ jobs:
             echo EOF
           } >> "$GITHUB_OUTPUT"
       - name: Create release when prod dependency upgraded
-        if: ${{ steps.has-new-prod-upgrade.outputs.has_new_prod_upgrade != 'true' }}
+        if: ${{ steps.has-new-prod-upgrade.outputs.has_new_prod_upgrade == 'true' }}
         run: |
           git tag -a "$NEW_TAG" -m "$NEW_TAG"
           git push --tags
