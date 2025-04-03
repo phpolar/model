@@ -10,7 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: env
+      - run: git config --global user.email "${{ env.GITHUB_ACTOR }}@phpolar.org"
+      - run: git config --global user.name "${{ env.GITHUB_ACTOR }}"
       - run: git fetch --all --unshallow
       - name: Set latest tag
         run: echo "latest_tag=$(git describe --tags --abbrev=0)" >> "$GITHUB_ENV"
