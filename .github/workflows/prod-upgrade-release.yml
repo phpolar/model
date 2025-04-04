@@ -1,44 +1,8 @@
 name: Prod Upgrade Release
-
 on:
   schedule:
-    - cron: "5 23 * * 0"
-
-permissions:
-  contents: write
-
+    - cron: '5 23 * * 0'
 jobs:
   prod_upgrade_release:
-    env:
-      DEP_UPGRADE_AUTHOR: dependabot
-      DEP_UPGRADE_TYPE: direct:production
-      USER_EMAIL: no-reply@phpolar.org
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Setup user email
-        run: git config --global user.email "$USER_EMAIL"
-      - name: Setup user namei
-        run: git config --global user.name "$GITHUB_ACTOR"
-      - name: Convert to unshallow fetch
-        run: git fetch --all --unshallow
-      - name: Set latest tag
-        run: echo "latest_tag=$(git describe --tags --abbrev=0)" >> "$GITHUB_ENV"
-      - name: Set new tag
-        run: echo "NEW_TAG=$(echo $latest_tag | awk 'BEGIN { FS = "." } { print $1"."$2"."$3+1 }')" >> "$GITHUB_ENV"
-      - name: Determine if prod dependency has been upgraded
-        id: has-new-prod-upgrade
-        run: |
-          {
-            echo 'has_new_prod_upgrade<<EOF'
-            [ -z "$(git log HEAD "$latest_tag" --author "$DEP_UPGRADE_AUTHOR" --grep "$DEP_UPGRADE_TYPE")" ] && echo 'true' || echo 'false'
-            echo EOF
-          } >> "$GITHUB_OUTPUT"
-      - name: Create release when prod dependency upgraded
-        if: ${{ steps.has-new-prod-upgrade.outputs.has_new_prod_upgrade == 'true' }}
-        run: |
-          git tag -a "$NEW_TAG" -m "$NEW_TAG"
-          git push --tags
-          gh release create "$NEW_TAG" --generate-notes --title "Dependency upgrade release"
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    uses: phpolar/github-workflows/.github/workflows/prod-upgrade-release.yml@v1
+    secrets: inherit
