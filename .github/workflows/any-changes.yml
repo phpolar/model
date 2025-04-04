@@ -1,4 +1,4 @@
-name: Source code changes
+name: Source code or test changes
 on:
   pull_request:
     branches:

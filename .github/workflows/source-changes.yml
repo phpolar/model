@@ -1,4 +1,4 @@
-name: Source code changes
+name: Source code only changes
 on:
   pull_request:
     branches:
