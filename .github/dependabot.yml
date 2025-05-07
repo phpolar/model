@@ -11,7 +11,7 @@ updates:
 
   - package-ecosystem: "composer"
     directory: "/"
-    ignore: 
+    ignore:
       - dependency-name: "phpolar/*"
     schedule:
       interval: "daily"
