@@ -11,7 +11,7 @@ updates:
 
   - package-ecosystem: "composer"
     directory: "/"
-    allow: 
+    allow:
       - dependency-type: "development"
     schedule:
       interval: "daily"
