@@ -58,9 +58,7 @@ trait FormControlTypeDetectionTrait
         }
         if ($propertyType instanceof ReflectionUnionType) {
             return in_array("string", $propertyType->getTypes()) === true &&
-                in_array("array", $propertyType->getTypes()) === false
-                ? FormControlTypes::Input
-                : FormControlTypes::Invalid;
+                in_array("array", $propertyType->getTypes()) === false ? FormControlTypes::Input : FormControlTypes::Invalid;
         }
         return FormControlTypes::Invalid;
     }

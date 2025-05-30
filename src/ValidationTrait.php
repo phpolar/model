@@ -57,9 +57,7 @@ trait ValidationTrait
         return array_map(
             function (ValidatorInterface $instance) use ($prop): ValidatorInterface {
                 if (property_exists($instance, "propVal") === true) {
-                    $instance->propVal = $prop->isInitialized($this) === true
-                        ? $prop->getValue($this)
-                        : $prop->getDefaultValue();
+                    $instance->propVal = $prop->isInitialized($this) === true ? $prop->getValue($this) : $prop->getDefaultValue();
                 }
                 return $instance;
             },
