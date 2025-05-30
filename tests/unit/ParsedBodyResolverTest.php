@@ -22,8 +22,10 @@ final class ParsedBodyResolverTest extends TestCase
     {
         $emptyParsedBody = [];
         $expectedKey = "testClass";
-        $reflectedObj = new class() {
-            public function testMethod(#[Model] ?ModelStub $testClass = null) {}
+        $reflectedObj = new class () {
+            public function testMethod(#[Model] ?ModelStub $testClass = null)
+            {
+            }
         };
         $sut = new ParsedBodyResolver($emptyParsedBody);
         $resultPair = $sut->resolve($reflectedObj, "testMethod");
@@ -38,8 +40,10 @@ final class ParsedBodyResolverTest extends TestCase
             "prop2" => random_int(1, 200),
             "prop3" => "what",
         ];
-        $reflectedObj = new class() {
-            public function testMethod(#[Model] ?ModelStub $testClass = null) {}
+        $reflectedObj = new class () {
+            public function testMethod(#[Model] ?ModelStub $testClass = null)
+            {
+            }
         };
         $sut = new ParsedBodyResolver($parsedBody);
         $resultPair = $sut->resolve($reflectedObj, "testMethod");
@@ -49,8 +53,10 @@ final class ParsedBodyResolverTest extends TestCase
     #[TestDox("Shall return an empty array if no arguments have the Model attribute")]
     public function test3()
     {
-        $reflectedObj = new class() {
-            public function testMethod(ModelStub $testClass) {}
+        $reflectedObj = new class () {
+            public function testMethod(ModelStub $testClass)
+            {
+            }
         };
         $sut = new ParsedBodyResolver(null);
         $resultPair = $sut->resolve($reflectedObj, "testMethod");
@@ -60,8 +66,10 @@ final class ParsedBodyResolverTest extends TestCase
     #[TestDox("Shall return an empty array if union type hint is used")]
     public function test3b()
     {
-        $reflectedObj = new class() {
-            public function testMethod(ModelStub|string $testClass) {}
+        $reflectedObj = new class () {
+            public function testMethod(ModelStub|string $testClass)
+            {
+            }
         };
         $sut = new ParsedBodyResolver(null);
         $resultPair = $sut->resolve($reflectedObj, "testMethod");
@@ -71,8 +79,10 @@ final class ParsedBodyResolverTest extends TestCase
     #[TestDox("Shall return an empty array if intersection type hint is used")]
     public function test3c()
     {
-        $reflectedObj = new class() {
-            public function testMethod(ModelStub&Closure $testClass) {}
+        $reflectedObj = new class () {
+            public function testMethod(ModelStub&Closure $testClass)
+            {
+            }
         };
         $sut = new ParsedBodyResolver(null);
         $resultPair = $sut->resolve($reflectedObj, "testMethod");
@@ -83,8 +93,10 @@ final class ParsedBodyResolverTest extends TestCase
     public function test4()
     {
         $this->expectException(RuntimeException::class);
-        $reflectedObj = new class() {
-            public function testMethod(#[Model] ?object $testClass = null) {}
+        $reflectedObj = new class () {
+            public function testMethod(#[Model] ?object $testClass = null)
+            {
+            }
         };
         $sut = new ParsedBodyResolver(null);
         $sut->resolve($reflectedObj, "testMethod");

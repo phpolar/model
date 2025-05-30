@@ -11,7 +11,7 @@ use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\Attributes\TestDox;
 use PHPUnit\Framework\TestCase;
 
-use const \Phpolar\Tests\PROJECT_SIZE_THRESHOLD;
+use const Phpolar\Tests\PROJECT_SIZE_THRESHOLD;
 
 #[CoversNothing]
 final class ProjectSizeTest extends TestCase

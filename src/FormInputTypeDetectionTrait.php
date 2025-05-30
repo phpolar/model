@@ -34,7 +34,9 @@ trait FormInputTypeDetectionTrait
                 "string" => InputTypes::Text,
                 "integer", "double" => InputTypes::Number,
                 "boolean" => InputTypes::Checkbox,
-                "object" => $property->getValue($this) instanceof DateTimeInterface ? InputTypes::Date : InputTypes::Invalid,
+                "object" => $property->getValue($this) instanceof DateTimeInterface
+                    ? InputTypes::Date
+                    : InputTypes::Invalid,
                 default => InputTypes::Invalid,
             } : InputTypes::Invalid;
         }

@@ -18,7 +18,8 @@ abstract class AbstractModelResolver implements ModelResolverInterface
 {
     public function __construct(
         protected mixed $unresolvedObj,
-    ) {}
+    ) {
+    }
 
     /**
      * Return the argument-name, object key-value pair

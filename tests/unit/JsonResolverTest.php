@@ -23,8 +23,10 @@ final class JsonResolverTest extends TestCase
     public function test1()
     {
         $expectedKey = "testClass";
-        $reflectedObj = new class() {
-            public function testMethod(#[Model] ?ModelStub $testClass = null) {}
+        $reflectedObj = new class () {
+            public function testMethod(#[Model] ?ModelStub $testClass = null)
+            {
+            }
         };
         $requestBody = $this->createStub(StreamInterface::class);
         $serverRequest = $this->createStub(ServerRequestInterface::class);
@@ -45,8 +47,10 @@ final class JsonResolverTest extends TestCase
             "prop3": "what"
         }
         JSON;
-        $reflectedObj = new class() {
-            public function testMethod(#[Model] ?ModelStub $testClass = null) {}
+        $reflectedObj = new class () {
+            public function testMethod(#[Model] ?ModelStub $testClass = null)
+            {
+            }
         };
         $requestBody = $this->createStub(StreamInterface::class);
         $serverRequest = $this->createStub(ServerRequestInterface::class);
@@ -60,8 +64,10 @@ final class JsonResolverTest extends TestCase
     #[TestDox("Shall return an empty array if no arguments have the Model attribute")]
     public function test3a()
     {
-        $reflectedObj = new class() {
-            public function testMethod(ModelStub $testClass) {}
+        $reflectedObj = new class () {
+            public function testMethod(ModelStub $testClass)
+            {
+            }
         };
         $requestBody = $this->createStub(StreamInterface::class);
         $serverRequest = $this->createStub(ServerRequestInterface::class);
@@ -75,8 +81,10 @@ final class JsonResolverTest extends TestCase
     #[TestDox("Shall return an empty array if union type hint is used")]
     public function test3b()
     {
-        $reflectedObj = new class() {
-            public function testMethod(ModelStub|string $testClass) {}
+        $reflectedObj = new class () {
+            public function testMethod(ModelStub|string $testClass)
+            {
+            }
         };
         $requestBody = $this->createStub(StreamInterface::class);
         $serverRequest = $this->createStub(ServerRequestInterface::class);
@@ -90,8 +98,10 @@ final class JsonResolverTest extends TestCase
     #[TestDox("Shall return an empty array if intersection type hint is used")]
     public function test3c()
     {
-        $reflectedObj = new class() {
-            public function testMethod(ModelStub&Closure $testClass) {}
+        $reflectedObj = new class () {
+            public function testMethod(ModelStub&Closure $testClass)
+            {
+            }
         };
         $requestBody = $this->createStub(StreamInterface::class);
         $serverRequest = $this->createStub(ServerRequestInterface::class);
@@ -106,8 +116,10 @@ final class JsonResolverTest extends TestCase
     public function test4()
     {
         $this->expectException(RuntimeException::class);
-        $reflectedObj = new class() {
-            public function testMethod(#[Model] ?object $testClass = null) {}
+        $reflectedObj = new class () {
+            public function testMethod(#[Model] ?object $testClass = null)
+            {
+            }
         };
         $requestBody = $this->createStub(StreamInterface::class);
         $serverRequest = $this->createStub(ServerRequestInterface::class);

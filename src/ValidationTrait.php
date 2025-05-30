@@ -39,8 +39,8 @@ trait ValidationTrait
     {
         return $prev && array_reduce(
             $this->getValidators($prop),
-            static fn (bool $previousResult, ValidatorInterface $currentAttribute) =>
-                $previousResult && $currentAttribute->isValid(),
+            static fn(bool $previousResult, ValidatorInterface $currentAttribute) =>
+            $previousResult && $currentAttribute->isValid(),
             true
         );
     }
@@ -57,12 +57,14 @@ trait ValidationTrait
         return array_map(
             function (ValidatorInterface $instance) use ($prop): ValidatorInterface {
                 if (property_exists($instance, "propVal") === true) {
-                    $instance->propVal = $prop->isInitialized($this) === true ? $prop->getValue($this) : $prop->getDefaultValue();
+                    $instance->propVal = $prop->isInitialized($this) === true
+                        ? $prop->getValue($this)
+                        : $prop->getDefaultValue();
                 }
                 return $instance;
             },
             array_map(
-                static fn (ReflectionAttribute $attr) => $attr->newInstance(),
+                static fn(ReflectionAttribute $attr) => $attr->newInstance(),
                 $prop->getAttributes(ValidatorInterface::class, ReflectionAttribute::IS_INSTANCEOF),
             ),
         );

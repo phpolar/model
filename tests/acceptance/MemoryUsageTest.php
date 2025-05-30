@@ -17,7 +17,7 @@ use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\Attributes\TestDox;
 use PHPUnit\Framework\TestCase;
 
-use const \Phpolar\Tests\PROJECT_MEMORY_USAGE_THRESHOLD;
+use const Phpolar\Tests\PROJECT_MEMORY_USAGE_THRESHOLD;
 
 #[CoversNothing]
 final class MemoryUsageTest extends TestCase
@@ -33,7 +33,7 @@ final class MemoryUsageTest extends TestCase
     public function shallBeBelowThreshold1(int $threshold)
     {
         $totalUsed = -memory_get_usage();
-        $model = new class() extends AbstractModel {
+        $model = new class () extends AbstractModel {
             #[Size(5)]
             #[Column("what")]
             public int $num;
