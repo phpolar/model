@@ -8,12 +8,14 @@ use Closure;
 use Phpolar\Model\Model;
 use Phpolar\Model\Tests\Stubs\ModelStub;
 use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\CoversClassesThatExtendClass;
 use PHPUnit\Framework\Attributes\TestDox;
 use PHPUnit\Framework\TestCase;
 use RuntimeException;
 
-#[CoversClass(ModelResolver::class)]
-final class ModelResolverTest extends TestCase
+#[CoversClass(ParsedBodyResolver::class)]
+#[CoversClassesThatExtendClass(AbstractModelResolver::class)]
+final class ParsedBodyResolverTest extends TestCase
 {
     #[TestDox("Shall return a key-value pair with the argument name being the argument name of the model")]
     public function test1()
@@ -25,7 +27,7 @@ final class ModelResolverTest extends TestCase
             {
             }
         };
-        $sut = new ModelResolver($emptyParsedBody);
+        $sut = new ParsedBodyResolver($emptyParsedBody);
         $resultPair = $sut->resolve($reflectedObj, "testMethod");
         $this->assertArrayHasKey($expectedKey, $resultPair);
     }
@@ -43,7 +45,7 @@ final class ModelResolverTest extends TestCase
             {
             }
         };
-        $sut = new ModelResolver($parsedBody);
+        $sut = new ParsedBodyResolver($parsedBody);
         $resultPair = $sut->resolve($reflectedObj, "testMethod");
         $this->assertContainsOnlyInstancesOf(ModelStub::class, $resultPair);
     }
@@ -56,7 +58,7 @@ final class ModelResolverTest extends TestCase
             {
             }
         };
-        $sut = new ModelResolver(null);
+        $sut = new ParsedBodyResolver(null);
         $resultPair = $sut->resolve($reflectedObj, "testMethod");
         $this->assertEmpty($resultPair);
     }
@@ -69,7 +71,7 @@ final class ModelResolverTest extends TestCase
             {
             }
         };
-        $sut = new ModelResolver(null);
+        $sut = new ParsedBodyResolver(null);
         $resultPair = $sut->resolve($reflectedObj, "testMethod");
         $this->assertEmpty($resultPair);
     }
@@ -82,7 +84,7 @@ final class ModelResolverTest extends TestCase
             {
             }
         };
-        $sut = new ModelResolver(null);
+        $sut = new ParsedBodyResolver(null);
         $resultPair = $sut->resolve($reflectedObj, "testMethod");
         $this->assertEmpty($resultPair);
     }
@@ -96,7 +98,7 @@ final class ModelResolverTest extends TestCase
             {
             }
         };
-        $sut = new ModelResolver(null);
+        $sut = new ParsedBodyResolver(null);
         $sut->resolve($reflectedObj, "testMethod");
     }
 }

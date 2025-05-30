@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Phpolar\Model;
 
-
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\CoversTrait;
 use PHPUnit\Framework\Attributes\TestDox;
@@ -112,7 +111,7 @@ final class PrimaryKeyTraitTest extends TestCase
         $this->assertSame(0, $sut->getPrimaryKey());
     }
 
-    #[TestDox("Shall return null for non-string, non-integer property configured as the primary key if no value is set")]
+    #[TestDox("Shall return null for empty property configured as the primary key if no value is set")]
     public function testd()
     {
         $sut = new class () {
@@ -137,7 +136,7 @@ final class PrimaryKeyTraitTest extends TestCase
         $this->assertNull($sut->getPrimaryKey());
     }
 
-    #[TestDox("Shall return null for non-string, non-integer property configured as the primary key if no value is set")]
+    #[TestDox("Shall return null for empty property configured as the primary key if no value is set")]
     public function testdb()
     {
         $sut = new class () {

@@ -104,7 +104,7 @@ trait FieldErrorMessageTrait
                 array_walk(
                     $errorMessages,
                     function (string $err) use ($prop): void {
-                        $this->errorMessages[$prop->getName()] = (string) $err;
+                        $this->errorMessages[$prop->getName()] = $err;
                     }
                 );
             }
@@ -128,7 +128,7 @@ trait FieldErrorMessageTrait
                 return $instance;
             },
             array_map(
-                static fn (ReflectionAttribute $attr) => $attr->newInstance(),
+                static fn(ReflectionAttribute $attr) => $attr->newInstance(),
                 $prop->getAttributes(MessageGetterInterface::class, ReflectionAttribute::IS_INSTANCEOF),
             ),
         );
@@ -146,7 +146,7 @@ trait FieldErrorMessageTrait
     {
         return array_filter(
             array_map(
-                static fn (MessageGetterInterface $attr) => (string) $attr->getMessage(),
+                static fn(MessageGetterInterface $attr) => $attr->getMessage(),
                 $attrs
             )
         );
