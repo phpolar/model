@@ -8,24 +8,24 @@ use Closure;
 use Phpolar\Model\Model;
 use Phpolar\Model\Tests\Stubs\ModelStub;
 use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\CoversClassesThatExtendClass;
 use PHPUnit\Framework\Attributes\TestDox;
 use PHPUnit\Framework\TestCase;
 use RuntimeException;
 
-#[CoversClass(ModelResolver::class)]
-final class ModelResolverTest extends TestCase
+#[CoversClass(ParsedBodyResolver::class)]
+#[CoversClassesThatExtendClass(AbstractModelResolver::class)]
+final class ParsedBodyResolverTest extends TestCase
 {
     #[TestDox("Shall return a key-value pair with the argument name being the argument name of the model")]
     public function test1()
     {
         $emptyParsedBody = [];
         $expectedKey = "testClass";
-        $reflectedObj = new class () {
-            public function testMethod(#[Model] ?ModelStub $testClass = null)
-            {
-            }
+        $reflectedObj = new class() {
+            public function testMethod(#[Model] ?ModelStub $testClass = null) {}
         };
-        $sut = new ModelResolver($emptyParsedBody);
+        $sut = new ParsedBodyResolver($emptyParsedBody);
         $resultPair = $sut->resolve($reflectedObj, "testMethod");
         $this->assertArrayHasKey($expectedKey, $resultPair);
     }
@@ -38,12 +38,10 @@ final class ModelResolverTest extends TestCase
             "prop2" => random_int(1, 200),
             "prop3" => "what",
         ];
-        $reflectedObj = new class () {
-            public function testMethod(#[Model] ?ModelStub $testClass = null)
-            {
-            }
+        $reflectedObj = new class() {
+            public function testMethod(#[Model] ?ModelStub $testClass = null) {}
         };
-        $sut = new ModelResolver($parsedBody);
+        $sut = new ParsedBodyResolver($parsedBody);
         $resultPair = $sut->resolve($reflectedObj, "testMethod");
         $this->assertContainsOnlyInstancesOf(ModelStub::class, $resultPair);
     }
@@ -51,12 +49,10 @@ final class ModelResolverTest extends TestCase
     #[TestDox("Shall return an empty array if no arguments have the Model attribute")]
     public function test3()
     {
-        $reflectedObj = new class () {
-            public function testMethod(ModelStub $testClass)
-            {
-            }
+        $reflectedObj = new class() {
+            public function testMethod(ModelStub $testClass) {}
         };
-        $sut = new ModelResolver(null);
+        $sut = new ParsedBodyResolver(null);
         $resultPair = $sut->resolve($reflectedObj, "testMethod");
         $this->assertEmpty($resultPair);
     }
@@ -64,12 +60,10 @@ final class ModelResolverTest extends TestCase
     #[TestDox("Shall return an empty array if union type hint is used")]
     public function test3b()
     {
-        $reflectedObj = new class () {
-            public function testMethod(ModelStub|string $testClass)
-            {
-            }
+        $reflectedObj = new class() {
+            public function testMethod(ModelStub|string $testClass) {}
         };
-        $sut = new ModelResolver(null);
+        $sut = new ParsedBodyResolver(null);
         $resultPair = $sut->resolve($reflectedObj, "testMethod");
         $this->assertEmpty($resultPair);
     }
@@ -77,12 +71,10 @@ final class ModelResolverTest extends TestCase
     #[TestDox("Shall return an empty array if intersection type hint is used")]
     public function test3c()
     {
-        $reflectedObj = new class () {
-            public function testMethod(ModelStub&Closure $testClass)
-            {
-            }
+        $reflectedObj = new class() {
+            public function testMethod(ModelStub&Closure $testClass) {}
         };
-        $sut = new ModelResolver(null);
+        $sut = new ParsedBodyResolver(null);
         $resultPair = $sut->resolve($reflectedObj, "testMethod");
         $this->assertEmpty($resultPair);
     }
@@ -91,12 +83,10 @@ final class ModelResolverTest extends TestCase
     public function test4()
     {
         $this->expectException(RuntimeException::class);
-        $reflectedObj = new class () {
-            public function testMethod(#[Model] ?object $testClass = null)
-            {
-            }
+        $reflectedObj = new class() {
+            public function testMethod(#[Model] ?object $testClass = null) {}
         };
-        $sut = new ModelResolver(null);
+        $sut = new ParsedBodyResolver(null);
         $sut->resolve($reflectedObj, "testMethod");
     }
 }

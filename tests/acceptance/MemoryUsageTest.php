@@ -33,7 +33,7 @@ final class MemoryUsageTest extends TestCase
     public function shallBeBelowThreshold1(int $threshold)
     {
         $totalUsed = -memory_get_usage();
-        $model = new class () extends AbstractModel {
+        $model = new class() extends AbstractModel {
             #[Size(5)]
             #[Column("what")]
             public int $num;
