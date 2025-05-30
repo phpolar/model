@@ -5,10 +5,11 @@ declare(strict_types=1);
 namespace Phpolar\Model;
 
 use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\CoversTrait;
 use PHPUnit\Framework\Attributes\TestDox;
 use PHPUnit\Framework\TestCase;
 
-#[CoversClass(ColumnNameTrait::class)]
+#[CoversTrait(ColumnNameTrait::class)]
 #[CoversClass(Column::class)]
 final class ColumnNameTraitTest extends TestCase
 {

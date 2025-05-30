@@ -9,8 +9,8 @@
         "phan/phan": "^5.4",
         "php-coveralls/php-coveralls": "^2.5",
         "phpmd/phpmd": "^2.13",
-        "phpstan/phpstan": "^1.9",
-        "phpunit/phpunit": "^11.1.3",
+        "phpstan/phpstan": "^2.0",
+        "phpunit/phpunit": "^10.0 || ^11.4 || ^12.0",
         "squizlabs/php_codesniffer": "^3.7"
     },
     "config": {
@@ -26,11 +26,12 @@
         }
     },
     "require": {
-        "php": ">=8.1",
-        "php-contrib/validator": "^1.0",
+        "php": ">=8.3",
+        "php-contrib/validator": "^2.0",
         "phpolar/core": "^4.0.0",
         "phpolar/model-resolver": "^1.0",
-        "phpolar/storage-driver": "^1.0"
+        "phpolar/storage-driver": "^1.0",
+        "psr/http-message": "^2.0"
     },
     "license": "MIT",
     "scripts": {
@@ -60,7 +61,17 @@
         "smell": "phpmd ./src ansi design,cleancode,codesize,naming",
         "test": "phpunit --color=always",
         "test:acceptance": "@test --configuration=phpunit.dev.xml --testsuite acceptance",
-        "test:acceptance:report": "@test --configuration=phpunit.dev.xml --testsuite acceptance --testdox-text acceptance-test-results.md",
+        "test:acceptance:report": [
+            "@test:acceptance --testdox-text acceptance-test-results.md",
+            "@acceptance-report-subheadings",
+            "@acceptance-report-checkbox",
+            "@acceptance-report-title",
+            "@acceptance-report-dedupe-line-endings"
+        ],
+        "acceptance-report-title": "sed -i -e '1i # Acceptance Test Report\\n' acceptance-test-results.md",
+        "acceptance-report-subheadings": "sed -i -E 's/^(\\S)(.*?)/## \\1\\2\\n/' acceptance-test-results.md",
+        "acceptance-report-checkbox": "sed -i -E 's/^ \\[/- [/' acceptance-test-results.md",
+        "acceptance-report-dedupe-line-endings": "sed -i '$d' acceptance-test-results.md",
         "test:benchmark": "@test --configuration=phpunit.dev.xml --testsuite benchmark",
         "test:unit": "@test --configuration=phpunit.dev.xml --testsuite unit",
         "test:coverage": "XDEBUG_MODE=coverage composer exec \"@test --configuration=phpunit.ci.xml --coverage-text --testsuite unit\""

@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Phpolar\Model;
 
-;
-
 use Attribute;
 use Phpolar\Phpolar\Core\AbstractPropertyNameExtractor;
 use Phpolar\Phpolar\Core\ColumnConfig;

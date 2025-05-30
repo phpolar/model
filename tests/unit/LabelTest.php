@@ -6,12 +6,13 @@ namespace Phpolar\Model;
 
 use Phpolar\Model\Tests\DataProviders\LabelDataProvider;
 use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\CoversTrait;
 use PHPUnit\Framework\Attributes\DataProviderExternal;
 use PHPUnit\Framework\Attributes\TestDox;
 use PHPUnit\Framework\TestCase;
 
 #[CoversClass(Label::class)]
-#[CoversClass(LabelFormatTrait::class)]
+#[CoversTrait(LabelFormatTrait::class)]
 final class LabelTest extends TestCase
 {
     #[DataProviderExternal(LabelDataProvider::class, "getLabelTestCases")]

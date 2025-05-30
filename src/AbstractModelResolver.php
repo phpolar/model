@@ -14,13 +14,10 @@ use RuntimeException;
  * Converts an object that is marked as a model
  * attribute to a argument-name-object key-value pair.
  */
-final class ModelResolver implements ModelResolverInterface
+abstract class AbstractModelResolver implements ModelResolverInterface
 {
-    /**
-     * @param array<string,string>|object|null $parsedRequestBody
-     */
     public function __construct(
-        private array|object|null $parsedRequestBody,
+        protected mixed $unresolvedObj,
     ) {
     }
 
@@ -69,7 +66,7 @@ final class ModelResolver implements ModelResolverInterface
                     )
                 );
             }
-            return new $className($this->parsedRequestBody);
+            return new $className($this->unresolvedObj);
         }
         return null; // @codeCoverageIgnore
     }

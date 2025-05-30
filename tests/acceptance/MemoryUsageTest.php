@@ -17,7 +17,7 @@ use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\Attributes\TestDox;
 use PHPUnit\Framework\TestCase;
 
-use const \Phpolar\Tests\PROJECT_MEMORY_USAGE_THRESHOLD;
+use const Phpolar\Tests\PROJECT_MEMORY_USAGE_THRESHOLD;
 
 #[CoversNothing]
 final class MemoryUsageTest extends TestCase

@@ -11,7 +11,6 @@ use PHPUnit\Framework\Attributes\TestDox;
 use PHPUnit\Framework\TestCase;
 
 #[CoversClass(InputTypes::class)]
-#[CoversClass(InvalidInputTypeCastToStringException::class)]
 final class InputTypesTest extends TestCase
 {
     public static function dataProvider(): array
