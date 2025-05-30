@@ -4,7 +4,7 @@ repos:
     exclude: (docs|\.phan|.vscode|composer.lock)
   - id: end-of-file-fixer
     exclude: (docs|\.phan|.vscode|composer.lock)
-    id: check-json
+  - id: check-json
     exclude: (docs|\.phan|.vscode|composer.lock)
   - id: check-xml
     exclude: (docs|\.phan|.vscode|composer.lock)
