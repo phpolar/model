@@ -16,6 +16,21 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Phpolar-Model-AbstractModel.html#method_getIterator"
         },                {
+            "fqsen": "\\Phpolar\\Model\\AbstractModelResolver",
+            "name": "AbstractModelResolver",
+            "summary": "Converts\u0020an\u0020object\u0020that\u0020is\u0020marked\u0020as\u0020a\u0020model\nattribute\u0020to\u0020a\u0020argument\u002Dname\u002Dobject\u0020key\u002Dvalue\u0020pair.",
+            "url": "classes/Phpolar-Model-AbstractModelResolver.html"
+        },                {
+            "fqsen": "\\Phpolar\\Model\\AbstractModelResolver\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/Phpolar-Model-AbstractModelResolver.html#method___construct"
+        },                {
+            "fqsen": "\\Phpolar\\Model\\AbstractModelResolver\u003A\u003Aresolve\u0028\u0029",
+            "name": "resolve",
+            "summary": "Return\u0020the\u0020argument\u002Dname,\u0020object\u0020key\u002Dvalue\u0020pair\nof\u0020the\u0020Model.",
+            "url": "classes/Phpolar-Model-AbstractModelResolver.html#method_resolve"
+        },                {
             "fqsen": "\\Phpolar\\Model\\Column",
             "name": "Column",
             "summary": "Provides\u0020support\u0020for\u0020configuring\u0020the\u0020text\u0020for\u0020column\u0020names\u0020in\u0020records.",
@@ -119,17 +134,17 @@ Search.appendIndex(
             "fqsen": "\\Phpolar\\Model\\FormControlTypes\u003A\u003ASelect",
             "name": "Select",
             "summary": "",
-            "url": ""
+            "url": "classes/Phpolar-Model-FormControlTypes.html#enumcase_Select"
         },                {
             "fqsen": "\\Phpolar\\Model\\FormControlTypes\u003A\u003AInput",
             "name": "Input",
             "summary": "",
-            "url": ""
+            "url": "classes/Phpolar-Model-FormControlTypes.html#enumcase_Input"
         },                {
             "fqsen": "\\Phpolar\\Model\\FormControlTypes\u003A\u003AInvalid",
             "name": "Invalid",
             "summary": "",
-            "url": ""
+            "url": "classes/Phpolar-Model-FormControlTypes.html#enumcase_Invalid"
         },                {
             "fqsen": "\\Phpolar\\Model\\FormInputTypeDetectionTrait",
             "name": "FormInputTypeDetectionTrait",
@@ -159,32 +174,42 @@ Search.appendIndex(
             "fqsen": "\\Phpolar\\Model\\InputTypes\u003A\u003ADate",
             "name": "Date",
             "summary": "",
-            "url": ""
+            "url": "classes/Phpolar-Model-InputTypes.html#enumcase_Date"
         },                {
             "fqsen": "\\Phpolar\\Model\\InputTypes\u003A\u003ANumber",
             "name": "Number",
             "summary": "",
-            "url": ""
+            "url": "classes/Phpolar-Model-InputTypes.html#enumcase_Number"
         },                {
             "fqsen": "\\Phpolar\\Model\\InputTypes\u003A\u003AText",
             "name": "Text",
             "summary": "",
-            "url": ""
+            "url": "classes/Phpolar-Model-InputTypes.html#enumcase_Text"
         },                {
             "fqsen": "\\Phpolar\\Model\\InputTypes\u003A\u003ACheckbox",
             "name": "Checkbox",
             "summary": "",
-            "url": ""
+            "url": "classes/Phpolar-Model-InputTypes.html#enumcase_Checkbox"
         },                {
             "fqsen": "\\Phpolar\\Model\\InputTypes\u003A\u003AHidden",
             "name": "Hidden",
             "summary": "",
-            "url": ""
+            "url": "classes/Phpolar-Model-InputTypes.html#enumcase_Hidden"
         },                {
             "fqsen": "\\Phpolar\\Model\\InputTypes\u003A\u003AInvalid",
             "name": "Invalid",
             "summary": "",
-            "url": ""
+            "url": "classes/Phpolar-Model-InputTypes.html#enumcase_Invalid"
+        },                {
+            "fqsen": "\\Phpolar\\Model\\JsonResolver",
+            "name": "JsonResolver",
+            "summary": "Deserializes\u0020JSON\u0020from\u0020a\u0020request\u0027s\u0020body\nto\u0020resolve\u0020the\u0020model.",
+            "url": "classes/Phpolar-Model-JsonResolver.html"
+        },                {
+            "fqsen": "\\Phpolar\\Model\\JsonResolver\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/Phpolar-Model-JsonResolver.html#method___construct"
         },                {
             "fqsen": "\\Phpolar\\Model\\Label",
             "name": "Label",
@@ -216,20 +241,15 @@ Search.appendIndex(
             "summary": "Marks\u0020a\u0020method\u0020argument\u0020as\u0020being\u0020a\u0020model.",
             "url": "classes/Phpolar-Model-Model.html"
         },                {
-            "fqsen": "\\Phpolar\\Model\\ModelResolver",
-            "name": "ModelResolver",
-            "summary": "Converts\u0020an\u0020object\u0020that\u0020is\u0020marked\u0020as\u0020a\u0020model\nattribute\u0020to\u0020a\u0020argument\u002Dname\u002Dobject\u0020key\u002Dvalue\u0020pair.",
-            "url": "classes/Phpolar-Model-ModelResolver.html"
+            "fqsen": "\\Phpolar\\Model\\ParsedBodyResolver",
+            "name": "ParsedBodyResolver",
+            "summary": "Uses\u0020the\u0020parsed\u0020body\u0020from\u0020a\u0020request\nto\u0020resolve\u0020the\u0020model.",
+            "url": "classes/Phpolar-Model-ParsedBodyResolver.html"
         },                {
-            "fqsen": "\\Phpolar\\Model\\ModelResolver\u003A\u003A__construct\u0028\u0029",
+            "fqsen": "\\Phpolar\\Model\\ParsedBodyResolver\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
             "summary": "",
-            "url": "classes/Phpolar-Model-ModelResolver.html#method___construct"
-        },                {
-            "fqsen": "\\Phpolar\\Model\\ModelResolver\u003A\u003Aresolve\u0028\u0029",
-            "name": "resolve",
-            "summary": "Return\u0020the\u0020argument\u002Dname,\u0020object\u0020key\u002Dvalue\u0020pair\nof\u0020the\u0020Model.",
-            "url": "classes/Phpolar-Model-ModelResolver.html#method_resolve"
+            "url": "classes/Phpolar-Model-ParsedBodyResolver.html#method___construct"
         },                {
             "fqsen": "\\Phpolar\\Model\\PrimaryKey",
             "name": "PrimaryKey",
