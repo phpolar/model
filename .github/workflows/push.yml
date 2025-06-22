@@ -4,8 +4,11 @@ on:
     branches:
       - 'main'
     paths:
-      - '*.php'
+      - '**.php'
       - 'composer.lock'
+      - '.github/workflows/push.yml'
 jobs:
-  build_php_old_stable:
-    uses: phpolar/github-workflows/.github/workflows/php-old-stable.yml@v1
+  os_build_check:
+    uses: phpolar/github-workflows/.github/workflows/os-build-check.yml@v1
+  coverage:
+    uses: phpolar/github-workflows/.github/workflows/coverage.yml@v1

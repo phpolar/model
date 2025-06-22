@@ -6,6 +6,7 @@ namespace Phpolar\Model;
 
 use Phpolar\Model\Tests\Stubs\EntityNameConfigured;
 use Phpolar\Model\Tests\Stubs\EntityNameNotConfigured;
+use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\CoversTrait;
 use PHPUnit\Framework\Attributes\TestDox;
 use PHPUnit\Framework\TestCase;

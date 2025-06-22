@@ -5,9 +5,6 @@ declare(strict_types=1);
 namespace Phpolar\Model;
 
 use Attribute;
-use Phpolar\Phpolar\Core\AbstractPropertyNameExtractor;
-use Phpolar\Phpolar\Core\DefaultLabelFormat;
-use Phpolar\Phpolar\Core\LabelFormatConfig;
 
 /**
  * Provides support for automatic formatting
@@ -16,9 +13,7 @@ use Phpolar\Phpolar\Core\LabelFormatConfig;
 #[Attribute(Attribute::TARGET_PROPERTY)]
 final class Label extends AbstractPropertyNameExtractor
 {
-    public function __construct(private string|LabelFormatConfig $arg = LabelFormatConfig::T_Default)
-    {
-    }
+    public function __construct(private string|LabelFormatConfig $arg = LabelFormatConfig::T_Default) {}
 
     /**
      * Returns the formatted label.

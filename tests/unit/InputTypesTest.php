@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Phpolar\Model;
 
-use Phpolar\Phpolar\Core\Exception\InvalidInputTypeCastToStringException;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\TestDox;

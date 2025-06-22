@@ -4,7 +4,7 @@
 
 # PHPolar Model
 
-## Provides support for configuring the properties of an object for validation, formatting, and storage.
+## Provides support for configuring the properties of an object for validation, formatting, and storage
 
 [![Coverage Status](https://coveralls.io/repos/github/phpolar/model/badge.svg?branch=main)](https://coveralls.io/repos/github/phpolar/model/badge.svg?branch=main) [![Latest Stable Version](https://poser.pugx.org/phpolar/model/v)](https://packagist.org/packages/phpolar/model) [![Total Downloads](https://poser.pugx.org/phpolar/model/downloads)](https://packagist.org/packages/phpolar/model) [![PHP Version Require](https://poser.pugx.org/phpolar/model/require/php)](https://packagist.org/packages/phpolar/model)
 
@@ -78,6 +78,4 @@ class Person extends AbstractModel
 
 |Source Code Size|Memory Usage|
 |----------------|------------|
-|     19 kB    |   175 kB   |
-
-[def]: https://packagist.org/packages/phpolar/model
+|       21 kB    |   175 kB   |

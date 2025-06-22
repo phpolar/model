@@ -28,7 +28,6 @@
     "require": {
         "php": ">=8.3",
         "php-contrib/validator": "^2.0",
-        "phpolar/core": "^4.0.0",
         "phpolar/model-resolver": "^1.0",
         "phpolar/storage-driver": "^1.0",
         "psr/http-message": "^2.0"
@@ -50,7 +49,10 @@
         "ci:lint-fix": "composer exec \"@lint-fix\"",
         "ci:test": "XDEBUG_MODE=coverage composer exec \"@test --configuration=phpunit.ci.xml --coverage-clover=build/logs/clover.xml\"",
         "ci:test-build": "composer exec \"@test --configuration=phpunit.ci.xml\"",
-        "ci:generate-coverage-badge": "composer exec \"php-coveralls -v\"",
+        "ci:generate-coverage-badge": [
+            "@test --configuration=phpunit.ci.xml --coverage-clover=build/logs/clover.xml",
+            "composer exec \"php-coveralls -v\""
+        ],
         "lint": "phpcs",
         "lint-fix": "phpcbf",
         "start:test": [
