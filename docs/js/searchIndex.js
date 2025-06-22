@@ -31,6 +31,16 @@ Search.appendIndex(
             "summary": "Return\u0020the\u0020argument\u002Dname,\u0020object\u0020key\u002Dvalue\u0020pair\nof\u0020the\u0020Model.",
             "url": "classes/Phpolar-Model-AbstractModelResolver.html#method_resolve"
         },                {
+            "fqsen": "\\Phpolar\\Model\\AbstractPropertyNameExtractor",
+            "name": "AbstractPropertyNameExtractor",
+            "summary": "Provides\u0020a\u0020default\u0020implementation\u0020used\u0020to\u0020\u002Aextract\u002A\u0020the\u0020name\u0020of\u0020a\u0020property.",
+            "url": "classes/Phpolar-Model-AbstractPropertyNameExtractor.html"
+        },                {
+            "fqsen": "\\Phpolar\\Model\\AbstractPropertyValueExtractor",
+            "name": "AbstractPropertyValueExtractor",
+            "summary": "Provides\u0020a\u0020default\u0020implementation\u0020used\u0020to\u0020\u002Aextract\u002A\u0020the\u0020value\u0020of\u0020a\u0020property.",
+            "url": "classes/Phpolar-Model-AbstractPropertyValueExtractor.html"
+        },                {
             "fqsen": "\\Phpolar\\Model\\Column",
             "name": "Column",
             "summary": "Provides\u0020support\u0020for\u0020configuring\u0020the\u0020text\u0020for\u0020column\u0020names\u0020in\u0020records.",
@@ -45,6 +55,16 @@ Search.appendIndex(
             "name": "getColumnName",
             "summary": "Returns\u0020the\u0020configured\u0020column\u0020name.",
             "url": "classes/Phpolar-Model-Column.html#method_getColumnName"
+        },                {
+            "fqsen": "\\Phpolar\\Model\\ColumnConfig",
+            "name": "ColumnConfig",
+            "summary": "Use\u0020to\u0020configure\u0020column\u0020name\u0020of\u0020record.",
+            "url": "classes/Phpolar-Model-ColumnConfig.html"
+        },                {
+            "fqsen": "\\Phpolar\\Model\\ColumnConfig\u003A\u003AT_Default",
+            "name": "T_Default",
+            "summary": "",
+            "url": "classes/Phpolar-Model-ColumnConfig.html#enumcase_T_Default"
         },                {
             "fqsen": "\\Phpolar\\Model\\ColumnNameTrait",
             "name": "ColumnNameTrait",
@@ -65,6 +85,36 @@ Search.appendIndex(
             "name": "getDataType",
             "summary": "Uses\u0020the\u0020property\u0020type\u0020to\u0020determine\u0020the\u0020data\u0020type\u0020type.",
             "url": "classes/Phpolar-Model-DataTypeDetectionTrait.html#method_getDataType"
+        },                {
+            "fqsen": "\\Phpolar\\Model\\DefaultColumnName",
+            "name": "DefaultColumnName",
+            "summary": "Provides\u0020the\u0020column\u0020name\nof\u0020an\u0020unconfigured\u0020property.",
+            "url": "classes/Phpolar-Model-DefaultColumnName.html"
+        },                {
+            "fqsen": "\\Phpolar\\Model\\DefaultColumnName\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/Phpolar-Model-DefaultColumnName.html#method___construct"
+        },                {
+            "fqsen": "\\Phpolar\\Model\\DefaultColumnName\u003A\u003AgetColumnName\u0028\u0029",
+            "name": "getColumnName",
+            "summary": "Produces\u0020the\u0020formatted\u0020label\nusing\u0020the\u0020default\u0020formatting.",
+            "url": "classes/Phpolar-Model-DefaultColumnName.html#method_getColumnName"
+        },                {
+            "fqsen": "\\Phpolar\\Model\\DefaultLabelFormat",
+            "name": "DefaultLabelFormat",
+            "summary": "Provides\u0020the\u0020label\u0020format\nof\u0020an\u0020unconfigured\u0020property.",
+            "url": "classes/Phpolar-Model-DefaultLabelFormat.html"
+        },                {
+            "fqsen": "\\Phpolar\\Model\\DefaultLabelFormat\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/Phpolar-Model-DefaultLabelFormat.html#method___construct"
+        },                {
+            "fqsen": "\\Phpolar\\Model\\DefaultLabelFormat\u003A\u003AgetLabel\u0028\u0029",
+            "name": "getLabel",
+            "summary": "Produces\u0020the\u0020formatted\u0020label\nusing\u0020the\u0020default\u0020formatting.",
+            "url": "classes/Phpolar-Model-DefaultLabelFormat.html#method_getLabel"
         },                {
             "fqsen": "\\Phpolar\\Model\\EntityName",
             "name": "EntityName",
@@ -115,6 +165,21 @@ Search.appendIndex(
             "name": "selectValAttr",
             "summary": "Selects\u0020one\u0020of\u0020the\u0020provided\u0020validation\nstrings\u0020based\u0020on\u0020the\u0020state\u0020of\u0020the\u0020model",
             "url": "classes/Phpolar-Model-FieldErrorMessageTrait.html#method_selectValAttr"
+        },                {
+            "fqsen": "\\Phpolar\\Model\\Formats",
+            "name": "Formats",
+            "summary": "Contains\u0020formattable\u0020strings.",
+            "url": "classes/Phpolar-Model-Formats.html"
+        },                {
+            "fqsen": "\\Phpolar\\Model\\Formats\u003A\u003AErrorTemplates",
+            "name": "ErrorTemplates",
+            "summary": "",
+            "url": "classes/Phpolar-Model-Formats.html#enumcase_ErrorTemplates"
+        },                {
+            "fqsen": "\\Phpolar\\Model\\Formats\u003A\u003AErrorText",
+            "name": "ErrorText",
+            "summary": "",
+            "url": "classes/Phpolar-Model-Formats.html#enumcase_ErrorText"
         },                {
             "fqsen": "\\Phpolar\\Model\\FormControlTypeDetectionTrait",
             "name": "FormControlTypeDetectionTrait",
@@ -201,6 +266,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Phpolar-Model-InputTypes.html#enumcase_Invalid"
         },                {
+            "fqsen": "\\Phpolar\\Model\\InvalidInputTypeCastToStringException",
+            "name": "InvalidInputTypeCastToStringException",
+            "summary": "Exception\u0020thrown\u0020if\u0020an\u0020invalid\u0020input\u0020type\u0020is\u0020cast\u0020to\u0020string.",
+            "url": "classes/Phpolar-Model-InvalidInputTypeCastToStringException.html"
+        },                {
             "fqsen": "\\Phpolar\\Model\\JsonResolver",
             "name": "JsonResolver",
             "summary": "Deserializes\u0020JSON\u0020from\u0020a\u0020request\u0027s\u0020body\nto\u0020resolve\u0020the\u0020model.",
@@ -225,6 +295,16 @@ Search.appendIndex(
             "name": "getLabel",
             "summary": "Returns\u0020the\u0020formatted\u0020label.",
             "url": "classes/Phpolar-Model-Label.html#method_getLabel"
+        },                {
+            "fqsen": "\\Phpolar\\Model\\LabelFormatConfig",
+            "name": "LabelFormatConfig",
+            "summary": "Use\u0020to\u0020configure\u0020formatting\u0020of\u0020form\u0020field\u0020labels.",
+            "url": "classes/Phpolar-Model-LabelFormatConfig.html"
+        },                {
+            "fqsen": "\\Phpolar\\Model\\LabelFormatConfig\u003A\u003AT_Default",
+            "name": "T_Default",
+            "summary": "",
+            "url": "classes/Phpolar-Model-LabelFormatConfig.html#enumcase_T_Default"
         },                {
             "fqsen": "\\Phpolar\\Model\\LabelFormatTrait",
             "name": "LabelFormatTrait",
@@ -266,6 +346,21 @@ Search.appendIndex(
             "summary": "Retrieve\u0020the\u0020value\u0020of\u0020the\u0020primary\u0020key\u0020property.",
             "url": "classes/Phpolar-Model-PrimaryKeyTrait.html#method_getPrimaryKey"
         },                {
+            "fqsen": "\\Phpolar\\Model\\PropertyTypeNotDeclared",
+            "name": "PropertyTypeNotDeclared",
+            "summary": "Explicitly\u0020describes\u0020the\u0020scenario\u0020when\nthe\u0020type\u0020of\u0020a\u0020propery\u0020is\u0020not\u0020decalred.",
+            "url": "classes/Phpolar-Model-PropertyTypeNotDeclared.html"
+        },                {
+            "fqsen": "\\Phpolar\\Model\\PropertyValueSetterInterface",
+            "name": "PropertyValueSetterInterface",
+            "summary": "Provides\u0020a\u0020way\u0020to\u0020\u002Aextract\u002A\u0020the\u0020value\u0020of\u0020a\u0020property.",
+            "url": "classes/Phpolar-Model-PropertyValueSetterInterface.html"
+        },                {
+            "fqsen": "\\Phpolar\\Model\\PropertyValueSetterInterface\u003A\u003AwithPropVal\u0028\u0029",
+            "name": "withPropVal",
+            "summary": "Immutably\u0020sets\u0020the\u0020\u0060\u0024val\u0060\u0020to\u0020the\u0020value\u0020of\u0020the\u0020given\u0020property.",
+            "url": "classes/Phpolar-Model-PropertyValueSetterInterface.html#method_withPropVal"
+        },                {
             "fqsen": "\\Phpolar\\Model\\Size",
             "name": "Size",
             "summary": "Provides\u0020support\u0020for\u0020configuring\u0020the\u0020size\u0020of\u0020a\u0020column.",
@@ -290,6 +385,11 @@ Search.appendIndex(
             "name": "getSize",
             "summary": "Returns\u0020the\u0020size\u0020if\u0020configured.",
             "url": "classes/Phpolar-Model-SizeConfigurationTrait.html#method_getSize"
+        },                {
+            "fqsen": "\\Phpolar\\Model\\SizeNotConfigured",
+            "name": "SizeNotConfigured",
+            "summary": "Represents\u0020the\u0020scenario\u0020when\nthe\u0020size\u0020of\u0020an\u0020entity\u0020is\u0020not\nconfigured.",
+            "url": "classes/Phpolar-Model-SizeNotConfigured.html"
         },                {
             "fqsen": "\\Phpolar\\Model\\ValidationTrait",
             "name": "ValidationTrait",
