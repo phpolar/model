@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Phpolar\Model;
 
-use Phpolar\Phpolar\Core\SizeNotConfigured;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\CoversTrait;
 use PHPUnit\Framework\Attributes\TestDox;

@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Phpolar\Model;
 
-use Phpolar\Phpolar\Core\Exception\InvalidInputTypeCastToStringException;
-
 /**
  * Contains most form field input types.
  */

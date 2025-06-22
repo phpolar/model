@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Phpolar\Model;
 
-use Phpolar\Phpolar\Core\DefaultColumnName;
 use ReflectionObject;
 use ReflectionProperty;
 
