@@ -345,7 +345,6 @@ return [
         'vendor/psr',
         'vendor/php-contrib/validator/src',
         'vendor/phpolar/model-resolver/src',
-        'vendor/phpolar/core/src',
         'vendor/phpolar/storage-driver/src',
     ],
 

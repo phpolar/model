@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Phpolar\Model;
 
-use Phpolar\Phpolar\Core\SizeNotConfigured;
-use Phpolar\Model\Size;
 use ReflectionProperty;
 
 /**

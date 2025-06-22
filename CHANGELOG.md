@@ -1,3 +1,9 @@
+## 2.1.0 (2025-06-22)
+
+### Feat
+
+- merge in the core project
+
 ## 2.0.0 (2025-05-29)
 
 ### BREAKING CHANGE

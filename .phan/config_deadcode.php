@@ -262,6 +262,9 @@ return [
     // to this list to inhibit them from being reported.
     'suppress_issue_types' => [
         'PhanUnreferencedPublicMethod',
+        'PhanUnreferencedPublicClassConstant',
+        'PhanWriteOnlyProtectedProperty',
+        'PhanUndeclaredProperty',
         'PhanUnreferencedClass',
         'PhanPluginNoCommentOnPrivateProperty',
         'PhanPluginNoCommentOnProtectedProperty',
@@ -338,8 +341,10 @@ return [
         'AlwaysReturnPlugin',
         'PregRegexCheckerPlugin',
         'HasPHPDocPlugin',
+        'ConstantVariablePlugin',
         'RedundantAssignmentPlugin',
         'UnsafeCodePlugin',
+        'UnusedSuppressionPlugin',
         'UnreachableCodePlugin',
     ],
 
@@ -353,7 +358,6 @@ return [
     'directory_list' => [
         'src',
         'vendor/psr',
-        'vendor/phpolar/core/src',
         'vendor/phpolar/storage-driver/src',
         'vendor/phpolar/model-resolver/src',
         'vendor/php-contrib/validator/src',

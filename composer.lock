@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "86cd19d293c75e65f1c99edc1e042f0c",
+    "content-hash": "f4ed1498331bcb22703530c17a61303a",
     "packages": [
         {
             "name": "php-contrib/validator",
@@ -48,63 +48,6 @@
                 "source": "https://github.com/php-contrib/validator/tree/2.0.0"
             },
             "time": "2025-01-20T13:39:19+00:00"
-        },
-        {
-            "name": "phpolar/core",
-            "version": "4.0.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/phpolar/core.git",
-                "reference": "1737e19e288169e229c854dec289f268f681ea8a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/phpolar/core/zipball/1737e19e288169e229c854dec289f268f681ea8a",
-                "reference": "1737e19e288169e229c854dec289f268f681ea8a",
-                "shasum": ""
-            },
-            "require": {
-                "ext-mbstring": "*",
-                "psr/http-message": "^2.0",
-                "psr/http-server-handler": "^1.0",
-                "psr/http-server-middleware": "^1.0"
-            },
-            "require-dev": {
-                "ext-ast": "*",
-                "ext-openssl": "*",
-                "phan/phan": "^5.4.1",
-                "php-coveralls/php-coveralls": "^2.5.3",
-                "phpmd/phpmd": "^2.13",
-                "phpolar/http-message-test-utils": "^0.1.0 || ^0.2.0",
-                "phpstan/phpstan": "^1.9.14 || ^2.0.0",
-                "phpunit/phpunit": "^11.4 || ^12.0",
-                "squizlabs/php_codesniffer": "^3.7.1"
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "src/Routing/constants.php"
-                ],
-                "psr-4": {
-                    "Phpolar\\Phpolar\\Core\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Eric Fortmeyer",
-                    "email": "e.fortmeyer01@gmail.com"
-                }
-            ],
-            "description": "The internal components of the PHPolar Microframework",
-            "support": {
-                "issues": "https://github.com/phpolar/core/issues",
-                "source": "https://github.com/phpolar/core/tree/4.0.3"
-            },
-            "time": "2025-04-16T04:09:36+00:00"
         },
         {
             "name": "phpolar/model-resolver",
@@ -245,119 +188,6 @@
                 "source": "https://github.com/php-fig/http-message/tree/2.0"
             },
             "time": "2023-04-04T09:54:51+00:00"
-        },
-        {
-            "name": "psr/http-server-handler",
-            "version": "1.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-fig/http-server-handler.git",
-                "reference": "84c4fb66179be4caaf8e97bd239203245302e7d4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/http-server-handler/zipball/84c4fb66179be4caaf8e97bd239203245302e7d4",
-                "reference": "84c4fb66179be4caaf8e97bd239203245302e7d4",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.0",
-                "psr/http-message": "^1.0 || ^2.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Psr\\Http\\Server\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "PHP-FIG",
-                    "homepage": "https://www.php-fig.org/"
-                }
-            ],
-            "description": "Common interface for HTTP server-side request handler",
-            "keywords": [
-                "handler",
-                "http",
-                "http-interop",
-                "psr",
-                "psr-15",
-                "psr-7",
-                "request",
-                "response",
-                "server"
-            ],
-            "support": {
-                "source": "https://github.com/php-fig/http-server-handler/tree/1.0.2"
-            },
-            "time": "2023-04-10T20:06:20+00:00"
-        },
-        {
-            "name": "psr/http-server-middleware",
-            "version": "1.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-fig/http-server-middleware.git",
-                "reference": "c1481f747daaa6a0782775cd6a8c26a1bf4a3829"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/http-server-middleware/zipball/c1481f747daaa6a0782775cd6a8c26a1bf4a3829",
-                "reference": "c1481f747daaa6a0782775cd6a8c26a1bf4a3829",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.0",
-                "psr/http-message": "^1.0 || ^2.0",
-                "psr/http-server-handler": "^1.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Psr\\Http\\Server\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "PHP-FIG",
-                    "homepage": "https://www.php-fig.org/"
-                }
-            ],
-            "description": "Common interface for HTTP server-side middleware",
-            "keywords": [
-                "http",
-                "http-interop",
-                "middleware",
-                "psr",
-                "psr-15",
-                "psr-7",
-                "request",
-                "response"
-            ],
-            "support": {
-                "issues": "https://github.com/php-fig/http-server-middleware/issues",
-                "source": "https://github.com/php-fig/http-server-middleware/tree/1.0.2"
-            },
-            "time": "2023-04-11T06:14:47+00:00"
         }
     ],
     "packages-dev": [
@@ -1163,16 +993,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v5.4.0",
+            "version": "v5.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "447a020a1f875a434d62f2a401f53b82a396e494"
+                "reference": "ae59794362fe85e051a58ad36b289443f57be7a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/447a020a1f875a434d62f2a401f53b82a396e494",
-                "reference": "447a020a1f875a434d62f2a401f53b82a396e494",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/ae59794362fe85e051a58ad36b289443f57be7a9",
+                "reference": "ae59794362fe85e051a58ad36b289443f57be7a9",
                 "shasum": ""
             },
             "require": {
@@ -1215,9 +1045,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nikic/PHP-Parser/issues",
-                "source": "https://github.com/nikic/PHP-Parser/tree/v5.4.0"
+                "source": "https://github.com/nikic/PHP-Parser/tree/v5.5.0"
             },
-            "time": "2024-12-30T11:07:19+00:00"
+            "time": "2025-05-31T08:24:38+00:00"
         },
         {
             "name": "pdepend/pdepend",
@@ -1284,16 +1114,16 @@
         },
         {
             "name": "phan/phan",
-            "version": "5.4.5",
+            "version": "5.4.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phan/phan.git",
-                "reference": "2b15302175931a0629a85c57d0c1f91d68b26a4d"
+                "reference": "5963ad2e55f7c4b3fd8349d25ddd7b43414d2d79"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phan/phan/zipball/2b15302175931a0629a85c57d0c1f91d68b26a4d",
-                "reference": "2b15302175931a0629a85c57d0c1f91d68b26a4d",
+                "url": "https://api.github.com/repos/phan/phan/zipball/5963ad2e55f7c4b3fd8349d25ddd7b43414d2d79",
+                "reference": "5963ad2e55f7c4b3fd8349d25ddd7b43414d2d79",
                 "shasum": ""
             },
             "require": {
@@ -1304,7 +1134,7 @@
                 "ext-tokenizer": "*",
                 "felixfbecker/advanced-json-rpc": "^3.0.4",
                 "microsoft/tolerant-php-parser": "0.1.2",
-                "netresearch/jsonmapper": "^1.6.0|^2.0|^3.0|^4.0",
+                "netresearch/jsonmapper": "^1.6.0|^2.0|^3.0|^4.0|^5.0",
                 "php": "^7.2.0|^8.0.0",
                 "sabre/event": "^5.1.3",
                 "symfony/console": "^3.2|^4.0|^5.0|^6.0|^7.0",
@@ -1358,9 +1188,9 @@
             ],
             "support": {
                 "issues": "https://github.com/phan/phan/issues",
-                "source": "https://github.com/phan/phan/tree/5.4.5"
+                "source": "https://github.com/phan/phan/tree/5.4.6"
             },
-            "time": "2024-08-13T21:41:35+00:00"
+            "time": "2025-06-09T13:26:52+00:00"
         },
         {
             "name": "phar-io/manifest",
@@ -1929,16 +1759,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "12.3.0",
+            "version": "12.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "9075a8efc66e11bc55c319062e147bdb06777267"
+                "reference": "ddec29dfc128eba9c204389960f2063f3b7fa170"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/9075a8efc66e11bc55c319062e147bdb06777267",
-                "reference": "9075a8efc66e11bc55c319062e147bdb06777267",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/ddec29dfc128eba9c204389960f2063f3b7fa170",
+                "reference": "ddec29dfc128eba9c204389960f2063f3b7fa170",
                 "shasum": ""
             },
             "require": {
@@ -1994,7 +1824,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/php-code-coverage/issues",
                 "security": "https://github.com/sebastianbergmann/php-code-coverage/security/policy",
-                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/12.3.0"
+                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/12.3.1"
             },
             "funding": [
                 {
@@ -2014,7 +1844,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-05-23T15:49:03+00:00"
+            "time": "2025-06-18T08:58:13+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -2263,16 +2093,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "12.1.6",
+            "version": "12.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "2fdf0056c673c8f0f1eed00030be5f8243c1e6e0"
+                "reference": "60a8ea2d8b2f070000051b56778009e11576e7d1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/2fdf0056c673c8f0f1eed00030be5f8243c1e6e0",
-                "reference": "2fdf0056c673c8f0f1eed00030be5f8243c1e6e0",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/60a8ea2d8b2f070000051b56778009e11576e7d1",
+                "reference": "60a8ea2d8b2f070000051b56778009e11576e7d1",
                 "shasum": ""
             },
             "require": {
@@ -2286,15 +2116,15 @@
                 "phar-io/manifest": "^2.0.4",
                 "phar-io/version": "^3.2.1",
                 "php": ">=8.3",
-                "phpunit/php-code-coverage": "^12.2.1",
+                "phpunit/php-code-coverage": "^12.3.1",
                 "phpunit/php-file-iterator": "^6.0.0",
                 "phpunit/php-invoker": "^6.0.0",
                 "phpunit/php-text-template": "^5.0.0",
                 "phpunit/php-timer": "^8.0.0",
                 "sebastian/cli-parser": "^4.0.0",
-                "sebastian/comparator": "^7.0.1",
+                "sebastian/comparator": "^7.1.0",
                 "sebastian/diff": "^7.0.0",
-                "sebastian/environment": "^8.0.1",
+                "sebastian/environment": "^8.0.2",
                 "sebastian/exporter": "^7.0.0",
                 "sebastian/global-state": "^8.0.0",
                 "sebastian/object-enumerator": "^7.0.0",
@@ -2308,7 +2138,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "12.1-dev"
+                    "dev-main": "12.2-dev"
                 }
             },
             "autoload": {
@@ -2340,7 +2170,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/12.1.6"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/12.2.3"
             },
             "funding": [
                 {
@@ -2364,7 +2194,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-05-21T12:36:31+00:00"
+            "time": "2025-06-20T11:33:06+00:00"
         },
         {
             "name": "psr/container",
@@ -2745,16 +2575,16 @@
         },
         {
             "name": "sebastian/comparator",
-            "version": "7.0.1",
+            "version": "7.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/comparator.git",
-                "reference": "b478f34614f934e0291598d0c08cbaba9644bee5"
+                "reference": "03d905327dccc0851c9a08d6a979dfc683826b6f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/b478f34614f934e0291598d0c08cbaba9644bee5",
-                "reference": "b478f34614f934e0291598d0c08cbaba9644bee5",
+                "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/03d905327dccc0851c9a08d6a979dfc683826b6f",
+                "reference": "03d905327dccc0851c9a08d6a979dfc683826b6f",
                 "shasum": ""
             },
             "require": {
@@ -2765,7 +2595,7 @@
                 "sebastian/exporter": "^7.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^12.0"
+                "phpunit/phpunit": "^12.2"
             },
             "suggest": {
                 "ext-bcmath": "For comparing BcMath\\Number objects"
@@ -2773,7 +2603,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "7.0-dev"
+                    "dev-main": "7.1-dev"
                 }
             },
             "autoload": {
@@ -2813,15 +2643,27 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/comparator/issues",
                 "security": "https://github.com/sebastianbergmann/comparator/security/policy",
-                "source": "https://github.com/sebastianbergmann/comparator/tree/7.0.1"
+                "source": "https://github.com/sebastianbergmann/comparator/tree/7.1.0"
             },
             "funding": [
                 {
                     "url": "https://github.com/sebastianbergmann",
                     "type": "github"
+                },
+                {
+                    "url": "https://liberapay.com/sebastianbergmann",
+                    "type": "liberapay"
+                },
+                {
+                    "url": "https://thanks.dev/u/gh/sebastianbergmann",
+                    "type": "thanks_dev"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/sebastian/comparator",
+                    "type": "tidelift"
                 }
             ],
-            "time": "2025-03-07T07:00:32+00:00"
+            "time": "2025-06-17T07:41:58+00:00"
         },
         {
             "name": "sebastian/complexity",
@@ -3513,16 +3355,16 @@
         },
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "3.13.0",
+            "version": "3.13.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPCSStandards/PHP_CodeSniffer.git",
-                "reference": "65ff2489553b83b4597e89c3b8b721487011d186"
+                "reference": "5b5e3821314f947dd040c70f7992a64eac89025c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPCSStandards/PHP_CodeSniffer/zipball/65ff2489553b83b4597e89c3b8b721487011d186",
-                "reference": "65ff2489553b83b4597e89c3b8b721487011d186",
+                "url": "https://api.github.com/repos/PHPCSStandards/PHP_CodeSniffer/zipball/5b5e3821314f947dd040c70f7992a64eac89025c",
+                "reference": "5b5e3821314f947dd040c70f7992a64eac89025c",
                 "shasum": ""
             },
             "require": {
@@ -3593,7 +3435,7 @@
                     "type": "thanks_dev"
                 }
             ],
-            "time": "2025-05-11T03:36:00+00:00"
+            "time": "2025-06-17T22:17:01+00:00"
         },
         {
             "name": "staabm/side-effects-detector",
