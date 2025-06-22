@@ -10,7 +10,9 @@ namespace Phpolar\Model;
  */
 final class DefaultColumnName extends AbstractPropertyNameExtractor
 {
-    public function __construct(protected string $propName = "") {}
+    public function __construct(protected string $propName = "")
+    {
+    }
 
     /**
      * Produces the formatted label

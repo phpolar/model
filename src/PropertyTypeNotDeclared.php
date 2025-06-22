@@ -8,4 +8,6 @@ namespace Phpolar\Model;
  * Explicitly describes the scenario when
  * the type of a propery is not decalred.
  */
-final class PropertyTypeNotDeclared {}
+final class PropertyTypeNotDeclared
+{
+}

@@ -9,4 +9,6 @@ namespace Phpolar\Model;
  * the size of an entity is not
  * configured.
  */
-final class SizeNotConfigured {}
+final class SizeNotConfigured
+{
+}

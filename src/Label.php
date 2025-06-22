@@ -13,7 +13,9 @@ use Attribute;
 #[Attribute(Attribute::TARGET_PROPERTY)]
 final class Label extends AbstractPropertyNameExtractor
 {
-    public function __construct(private string|LabelFormatConfig $arg = LabelFormatConfig::T_Default) {}
+    public function __construct(private string|LabelFormatConfig $arg = LabelFormatConfig::T_Default)
+    {
+    }
 
     /**
      * Returns the formatted label.

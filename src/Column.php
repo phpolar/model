@@ -12,7 +12,9 @@ use Attribute;
 #[Attribute(Attribute::TARGET_PROPERTY)]
 final class Column extends AbstractPropertyNameExtractor
 {
-    public function __construct(private string|ColumnConfig $arg = ColumnConfig::T_Default) {}
+    public function __construct(private string|ColumnConfig $arg = ColumnConfig::T_Default)
+    {
+    }
 
     /**
      * Returns the configured column name.
