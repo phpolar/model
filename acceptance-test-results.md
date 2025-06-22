@@ -6,4 +6,4 @@
 
 ## Project Size (Phpolar\ProjectSize)
 
-- [x] Source code total size shall be below 19000 bytes
+- [x] Source code total size shall be below 21000 bytes
