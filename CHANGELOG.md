@@ -1,3 +1,9 @@
+## 2.2.0 (2026-01-03)
+
+### Feat
+
+- **AbstractPropertValueExtractor**: check default value before copying
+
 ## 2.1.2 (2025-12-04)
 
 ## 2.1.1 (2025-12-04)
