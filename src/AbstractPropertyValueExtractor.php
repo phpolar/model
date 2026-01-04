@@ -21,7 +21,12 @@ abstract class AbstractPropertyValueExtractor implements PropertyValueSetterInte
     public function withPropVal(ReflectionProperty $prop, object $obj): static
     {
         $copy = clone $this;
-        $copy->val = $prop->isInitialized($obj) === true ? $prop->getValue($obj) : $prop->getDefaultValue();
+        if ($prop->isInitialized($obj) === true) {
+            $copy->val = $prop->getValue($obj);
+        }
+        if ($prop->hasDefaultValue() === true) {
+            $copy->val = $prop->getDefaultValue();
+        }
         return $copy;
     }
 }

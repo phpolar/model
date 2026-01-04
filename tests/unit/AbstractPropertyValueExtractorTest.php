@@ -29,6 +29,22 @@ final class AbstractPropertyValueExtractorTest extends TestCase
     #[TestDox("Shall immutably set the default value of the property if it is not initialized")]
     public function test2()
     {
+        $defaultValue = "DEFAULT_VALUE";
+        $sut = new class () extends AbstractPropertyValueExtractor {
+        };
+        $obj = new class ($defaultValue) {
+            public function __construct(
+                public string $someProp = "DEFAULT_VALUE",
+            ) {}
+        };
+        $copy = $sut->withPropVal(new ReflectionProperty($obj, "someProp"), $obj);
+        $reflectionObj = new ReflectionObject($copy);
+        $this->assertSame($reflectionObj->getProperty("val")->getValue($copy), $defaultValue);
+    }
+
+    #[TestDox("Shall not set value of the property if it is not initialized and does not have a default value")]
+    public function test3()
+    {
         $sut = new class () extends AbstractPropertyValueExtractor {
         };
         $obj = new class () {
@@ -36,6 +52,6 @@ final class AbstractPropertyValueExtractorTest extends TestCase
         };
         $copy = $sut->withPropVal(new ReflectionProperty($obj, "someProp"), $obj);
         $reflectionObj = new ReflectionObject($copy);
-        $this->assertNull($reflectionObj->getProperty("val")->getValue($copy));
+        $this->assertFalse($reflectionObj->getProperty("val")->isInitialized($copy));
     }
 }
