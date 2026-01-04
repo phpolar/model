@@ -35,7 +35,8 @@ final class AbstractPropertyValueExtractorTest extends TestCase
         $obj = new class ($defaultValue) {
             public function __construct(
                 public string $someProp = "DEFAULT_VALUE",
-            ) {}
+            ) {
+            }
         };
         $copy = $sut->withPropVal(new ReflectionProperty($obj, "someProp"), $obj);
         $reflectionObj = new ReflectionObject($copy);
