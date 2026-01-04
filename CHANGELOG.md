@@ -1,3 +1,10 @@
+## 2.2.1 (2026-01-03)
+
+### Fix
+
+- **ValidationTrait**: verify default value is set
+- **FieldErrorMessageTrait**: verify default value is set
+
 ## 2.2.0 (2026-01-03)
 
 ### Feat
